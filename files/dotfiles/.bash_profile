@@ -7,3 +7,14 @@ export BASH_SILENCE_DEPRECATION_WARNING=1
 if [ -r ~/.bashrc ]; then
     . ~/.bashrc
 fi
+
+# homebrew
+eval "$(/opt/homebrew/bin/brew shellenv)"
+
+# nvm
+export NVM_DIR=~/.nvm
+source $(brew --prefix nvm)/nvm.sh
+
+# go
+export PATH="$PATH:$(go env GOPATH)/bin"
+

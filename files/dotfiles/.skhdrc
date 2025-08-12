@@ -1,0 +1,5 @@
+
+# open configs
+cmd + shift - s: nvim  $HOME/.skhdrc
+cmd + shift - n: nvim  $HOME/.config/nvim
+

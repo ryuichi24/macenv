@@ -47,8 +47,8 @@ sysmlink_file() {
 
 echo "Initialize the mac environment"
 
-# HOME_DIR="$HOME"
-HOME_DIR="./test-home-dir"
+HOME_DIR="$HOME"
+# HOME_DIR="./test-home-dir"
 CONFIG_DIR="$HOME_DIR/.config"
 SOURCE_FILES_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)/files"
 SOURCE_CONFIG_DIR="$SOURCE_FILES_DIR/.config"

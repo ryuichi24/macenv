@@ -2,9 +2,8 @@
 alias ls='ls -larth --color=auto'
 
 # neovim
-alias vi='nvim'
-alias vim="nvim"
-NVIM_APPNAME="nvim/src" # https://github.com/neovim/neovim/pull/25233
+alias vi='NVIM_APPNAME=nvim/src nvim' # https://wiki.archlinux.org/title/Neovim
+alias vim='NVIM_APPNAME=nvim/src nvim'
 
 # pnpm
 alias pn='pnpm'

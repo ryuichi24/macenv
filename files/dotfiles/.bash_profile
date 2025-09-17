@@ -18,3 +18,10 @@ source $(brew --prefix nvm)/nvm.sh
 # go
 export PATH="$PATH:$(go env GOPATH)/bin"
 
+# iterm2
+DISABLE_AUTO_TITLE="true"
+
+precmd() {
+  # sets the tab title to current dir
+  echo -ne "\e]1;${PWD##*/}\a"
+}

@@ -42,6 +42,7 @@ BREW_CLIS=(
     # "koekeishiya/formulae/yabai" # Tiling window manager for macOS
     "nikitabobko/tap/aerospace" # native Tiling window manager for macOS
     "tmux"    # Terminal
+    "sst/tap/opencode" # AI Model CLI Client
 )
 
 # =============================================

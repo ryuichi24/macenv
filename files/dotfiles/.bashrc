@@ -23,3 +23,5 @@ alias pn='pnpm'
 alias initkt='sudo kanata -c $HOME/.config/kanata/config.kbd -d'
 
 # util
+# general
+alias ch="cat ~/.bashrc"

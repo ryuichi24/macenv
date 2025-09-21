@@ -8,8 +8,8 @@
 )
 
 (defvar
-  tap-time 200
-  hold-time 200 
+  tap-time 150
+  hold-time 150 
   hold-time-slow 300 
 )
 
@@ -22,7 +22,7 @@
 
     ;; Layer Keys
     ;; caps (tap-hold $tap-time $hold-time caps @l_nav)
-    a (tap-hold $tap-time $hold-time a @l_nav)
+    s (tap-hold $tap-time $hold-time a @l_nav)
     n (tap-hold $tap-time $hold-time n @l_num)
     ;; f (tap-hold $tap-time $hold-time f @l_symbol)
     spc (tap-hold $tap-time $hold-time spc @l_symbol)
@@ -67,7 +67,7 @@
     esc  🔅    🔆    @mc   @sls  @dtn  @dnd  ◀◀    ▶⏸    ▶▶    🔇    🔉    🔊
     ` 1 2 3  4 5 6 7  8 9 0 -  = bspc
     tab q w e  r t y u  i o p [  ] \
-    lctl a s d  f g h j  k l ; '  ret 
+    lctl a @s d  f g h j  k l ; '  ret 
     lsft z x c  v b @n m  , . / rsft 
     fn lctl lalt lmet @spc rmet ralt left  down up right
 )

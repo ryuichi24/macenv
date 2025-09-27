@@ -15,17 +15,49 @@
 
 
 (defalias
-    ;; Layer toggles
-    l_nav (layer-toggle nav)
-    l_num (layer-toggle num)
-    l_symbol (layer-toggle symbol)
+    ;; name alaias
+    lclick mltp
+
+
+    ;; Layer while held
+    l_nav (layer-while-held nav)
+    l_symbol (layer-while-held symbol)
+    l_held_s_visual (layer-while-held s_visual)
+
+    ;; Layer switch
+    l_switch_base (layer-switch base)
+    l_switch_normal (layer-switch normal)
+    l_switch_visual (layer-switch visual)
 
     ;; Layer Keys
     ;; caps (tap-hold $tap-time $hold-time caps @l_nav)
     s (tap-hold $tap-time $hold-time a @l_nav)
-    n (tap-hold $tap-time $hold-time n @l_num)
     ;; f (tap-hold $tap-time $hold-time f @l_symbol)
-    spc (tap-hold $tap-time $hold-time spc @l_symbol)
+    rmet (tap-hold $tap-time $hold-time ret @l_symbol)
+
+    ;; Key combo
+    lsel S-left
+    rsel S-right
+    usel S-up
+    dsel S-down
+    llinemove M-left ;; Move to beginning of line
+    rlinemove M-right ;; Move to end of line
+    llinesel S-M-left ;; Select to beginning of line
+    rlinesel S-M-right ;; Select to end of line
+    copy M-c
+    cut M-x
+    paste M-v
+    undo M-z
+    rwordmove A-right
+    lwordmove A-left
+
+    ;; Macro
+
+    ;; Multi
+    vi_yank (multi (macro @copy 50 @lclick) @l_switch_normal)
+    vi_cut (multi (macro @cut 50 @lclick) @l_switch_normal)
+    vi_shiftv (multi (macro @llinemove @rlinesel) @l_switch_visual)
+    vi_appendinsert (multi (macro right) @l_switch_base)
     
 
     ;; Symbols
@@ -39,10 +71,9 @@
     * S-8
     ? S-/
     + S-=
-    _ S-- 
+    _ S--
     | S-\
     : S-;
-    ` S-`
     ~ S-`
     ;; brackets
     lp S-9
@@ -53,8 +84,10 @@
     > S-.
     dq S-'
     ;;
-    lmet (tap-hold $tap-time $hold-time bspc lmet)
-    rmet (tap-hold $tap-time $hold-time ret lmet)
+
+    ;; NOTE: temporary disabled
+    ;; lmet (tap-hold $tap-time $hold-time bspc lmet)
+    ;; rmet (tap-hold $tap-time $hold-time ret lmet)
 
     ;; MacOS specific keys
     mc C-up ;; Mission Control
@@ -67,9 +100,9 @@
     esc  🔅    🔆    @mc   @sls  @dtn  @dnd  ◀◀    ▶⏸    ▶▶    🔇    🔉    🔊
     ` 1 2 3  4 5 6 7  8 9 0 -  = bspc
     tab q w e  r t y u  i o p [  ] \
-    lctl a s d  f g h j  k l ; '  ret 
-    lsft z x c  v b @n m  , . / rsft 
-    fn lctl lalt lmet @spc rmet ralt left  down up right
+    lctl a s d  f g h j  k l ; ' ret
+    lsft z x c  v b n m  , . / @l_switch_normal
+    fn lctl lalt lmet spc @rmet ralt left  down up right
 )
 
 (deflayer nav
@@ -81,13 +114,41 @@
     XX lctl lalt lmet  XX XX XX XX  XX XX XX
 )
 
+(deflayer normal
+    esc XX XX XX  XX XX XX XX  XX XX XX XX  XX
+    XX XX XX XX  XX XX XX XX  XX XX XX XX  XX XX
+    XX XX @rwordmove XX  XX XX XX @undo  @l_switch_base XX @paste XX  XX XX
+    XX @vi_appendinsert XX XX  XX XX left down  up right XX XX XX
+    @l_held_s_visual XX XX XX  @l_switch_visual @lwordmove XX XX  XX XX XX XX
+    XX XX XX XX  XX XX XX XX  XX XX XX
+)
+
+
+(deflayer visual
+    esc XX XX XX  XX XX XX XX  XX XX XX XX  XX
+    XX XX XX XX  XX XX XX XX  XX XX XX XX  XX XX
+    XX @l_switch_base XX XX  XX XX @vi_yank XX  XX XX XX XX  XX XX
+    XX XX XX @vi_cut  XX XX @lsel @dsel @usel @rsel XX XX  XX
+    lsft XX XX XX  XX XX XX XX  XX XX XX XX 
+    XX lctl lalt lmet  XX XX XX XX  XX XX XX
+)
+
+(deflayer s_visual
+    esc XX XX XX  XX XX XX XX  XX XX XX XX  XX
+    XX XX XX XX  XX XX XX XX  XX XX XX XX  XX XX
+    XX XX XX XX  XX XX XX XX  XX XX XX XX  XX XX
+    XX XX XX XX  XX XX XX XX XX XX XX XX  XX
+    XX XX XX XX  @vi_shiftv XX XX XX  XX XX XX XX 
+    XX XX XX XX  XX XX XX XX  XX XX XX
+)
+
 (deflayer symbol
     esc XX XX XX  XX XX XX XX  XX XX XX XX  XX
     XX XX XX XX  XX XX XX XX  XX XX XX XX  XX XX
-    XX @? @* @!  XX @~ XX @lp  @rp XX @% XX  XX XX
-    XX @@ / .  XX ' @dq (mwheel-down 10000 25) (mwheel-up 10000 25) XX XX XX  XX 
-    XX XX XX @^  XX XX @{ @}  @< @> XX XX 
-    XX XX XX XX  = XX XX XX  XX XX XX
+    XX ' @dq @!  XX XX XX XX  XX XX XX XX  XX XX
+    XX @@ / .  XX XX XX XX XX XX XX XX  XX
+    XX XX XX ,  XX XX XX XX  XX XX XX XX
+    XX XX XX XX  XX XX XX XX  XX XX XX
 )
 
 (deflayer num

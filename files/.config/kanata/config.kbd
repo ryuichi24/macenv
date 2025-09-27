@@ -18,7 +18,6 @@
     ;; name alaias
     lclick mltp
 
-
     ;; Layer while held
     l_nav (layer-while-held nav)
     l_symbol (layer-while-held symbol)
@@ -127,7 +126,7 @@
 (deflayer visual
     esc XX XX XX  XX XX XX XX  XX XX XX XX  XX
     XX XX XX XX  XX XX XX XX  XX XX XX XX  XX XX
-    XX @l_switch_base XX XX  XX XX @vi_yank XX  XX XX XX XX  XX XX
+    XX @l_switch_normal XX XX  XX XX @vi_yank XX  XX XX XX XX  XX XX
     XX XX XX @vi_cut  XX XX @lsel @dsel @usel @rsel XX XX  XX
     lsft XX XX XX  XX XX XX XX  XX XX XX XX 
     XX lctl lalt lmet  XX XX XX XX  XX XX XX

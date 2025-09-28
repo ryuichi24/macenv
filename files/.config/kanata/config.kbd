@@ -19,19 +19,17 @@
     lclick mltp
 
     ;; Layer while held
-    l_nav (layer-while-held nav)
     l_symbol (layer-while-held symbol)
     l_held_s_visual (layer-while-held s_visual)
+    l_held_num (layer-while-held num)
 
     ;; Layer switch
     l_switch_base (layer-switch base)
     l_switch_normal (layer-switch normal)
     l_switch_visual (layer-switch visual)
+    l_switch_num (layer-switch num)
 
     ;; Layer Keys
-    ;; caps (tap-hold $tap-time $hold-time caps @l_nav)
-    s (tap-hold $tap-time $hold-time a @l_nav)
-    ;; f (tap-hold $tap-time $hold-time f @l_symbol)
     rmet (tap-hold $tap-time $hold-time ret @l_symbol)
 
     ;; Key combo
@@ -53,8 +51,8 @@
     ;; Macro
 
     ;; Multi
-    vi_yank (multi (macro @copy 50 @lclick) @l_switch_normal)
-    vi_cut (multi (macro @cut 50 @lclick) @l_switch_normal)
+    vi_yank (multi (macro @copy 50 left) @l_switch_normal)
+    vi_cut (multi (macro @cut 50 left) @l_switch_normal)
     vi_shiftv (multi (macro @llinemove @rlinesel) @l_switch_visual)
     vi_appendinsert (multi (macro right) @l_switch_base)
     
@@ -101,16 +99,7 @@
     tab q w e  r t y u  i o p [  ] \
     lctl a s d  f g h j  k l ; ' ret
     lsft z x c  v b n m  , . / @l_switch_normal
-    fn lctl lalt lmet spc @rmet ralt left  down up right
-)
-
-(deflayer nav
-    esc XX XX XX  XX XX XX XX  XX XX XX XX  XX
-    XX XX XX XX  XX XX XX XX  XX XX XX XX  XX bspc
-    XX XX XX XX  XX XX XX XX  XX XX XX XX  XX XX
-    XX XX XX XX  XX XX left down  up right XX XX  ret 
-    lsft XX XX XX  XX XX XX XX  XX XX XX XX 
-    XX lctl lalt lmet  XX XX XX XX  XX XX XX
+    fn lctl lalt lmet spc @rmet @l_held_num left  down up right
 )
 
 (deflayer normal
@@ -144,19 +133,19 @@
 (deflayer symbol
     esc XX XX XX  XX XX XX XX  XX XX XX XX  XX
     XX XX XX XX  XX XX XX XX  XX XX XX XX  XX XX
-    XX ' @dq @!  XX XX XX XX  XX XX XX XX  XX XX
-    XX @@ / .  XX XX XX XX XX XX XX XX  XX
-    XX XX XX ,  XX XX XX XX  XX XX XX XX
+    XX ' @dq ` @: XX XX @_  @| XX @^ XX  XX XX
+    XX @@ / .  ; @? @# XX XX XX XX XX  XX
+    XX \ @* ,  @~ @! @& @$ XX XX XX XX
     XX XX XX XX  XX XX XX XX  XX XX XX
 )
 
 (deflayer num
     esc XX XX XX  XX XX XX XX  XX XX XX XX  XX
     XX XX XX XX  XX XX XX XX  XX XX XX XX  XX bspc
-    XX 1 2 3  XX XX XX XX  XX XX XX XX  XX XX
+    XX 7 8 9  XX XX XX XX  XX XX XX XX  XX XX
     XX 4 5 6  XX XX XX XX  XX XX XX XX  XX 
-    XX 7 8 9  XX XX XX XX  XX XX XX XX 
-    XX XX XX 0  XX XX XX XX  XX XX XX
+    XX 1 2 3  XX XX XX XX  XX XX XX XX 
+    XX XX 0 XX  XX XX XX XX  XX XX XX
 )
 
 (defcfg

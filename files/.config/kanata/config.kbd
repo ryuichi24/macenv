@@ -56,6 +56,7 @@
     vi_yank (multi (macro @copy 50 left) @l_switch_normal)
     vi_cut (multi (macro @cut 50 left) @l_switch_normal)
     vi_shiftv (multi (macro @llinemove @rlinesel) @l_switch_visual)
+    vi_newline (multi (macro @rlinemove 50 S-ret) @l_switch_base)
     vi_appendinsert (multi (macro right) @l_switch_base)
     
 
@@ -107,7 +108,7 @@
 (deflayer normal
     esc XX XX XX  XX XX XX XX  XX XX XX XX  XX
     XX XX XX XX  XX XX XX XX  XX XX XX XX  XX XX
-    XX XX @rwordmove XX  XX XX XX @undo  @l_switch_base XX @paste XX  XX XX
+    XX XX @rwordmove XX  XX XX XX @undo  @l_switch_base @vi_newline @paste XX  XX XX
     XX @vi_appendinsert XX XX  XX XX left down  up right XX XX XX
     @l_held_s_visual XX XX XX  @l_switch_visual @lwordmove XX XX  XX XX XX XX
     XX XX XX XX  XX XX XX XX  XX XX XX

@@ -22,6 +22,8 @@
     l_symbol (layer-while-held symbol)
     l_held_s_visual (layer-while-held s_visual)
     l_held_num (layer-while-held num)
+    l_held_bracket (layer-while-held bracket)
+    
 
     ;; Layer switch
     l_switch_base (layer-switch base)
@@ -99,7 +101,7 @@
     tab q w e  r t y u  i o p [  ] \
     lctl a s d  f g h j  k l ; ' ret
     lsft z x c  v b n m  , . / @l_switch_normal
-    fn lctl lalt lmet spc @rmet @l_held_num left  down up right
+    fn @l_held_bracket lalt lmet spc @rmet @l_held_num left  down up right
 )
 
 (deflayer normal
@@ -136,6 +138,15 @@
     XX ' @dq ` @: @~ @^ @_  @| - @+ XX  XX XX
     XX @@ / .  ; @? @# = XX XX XX XX  XX
     XX \ @* ,  XX @! @& @$ XX XX XX XX
+    XX XX XX XX  XX XX XX XX  XX XX XX
+)
+
+(deflayer bracket
+    XX XX XX XX  XX XX XX XX  XX XX XX XX  XX
+    XX XX XX XX  XX XX XX XX  XX XX XX XX  XX XX
+    XX XX XX XX  XX XX XX @lp @rp @< @> XX  XX XX
+    XX XX XX XX  XX XX XX @{  @} XX XX XX  XX 
+    XX XX XX XX  XX XX [ ]  XX XX XX XX
     XX XX XX XX  XX XX XX XX  XX XX XX
 )
 

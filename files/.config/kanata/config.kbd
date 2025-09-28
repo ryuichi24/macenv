@@ -22,7 +22,7 @@
     l_symbol (layer-while-held symbol)
     l_held_s_visual (layer-while-held s_visual)
     l_held_num (layer-while-held num)
-    l_held_bracket (layer-while-held bracket)
+    l_held_minor_symbol (layer-while-held minor_symbol)
     
 
     ;; Layer switch
@@ -101,7 +101,7 @@
     tab q w e  r t y u  i o p [  ] \
     lctl a s d  f g h j  k l ; ' ret
     lsft z x c  v b n m  , . / @l_switch_normal
-    fn @l_held_bracket lalt lmet spc @rmet @l_held_num left  down up right
+    fn @l_held_minor_symbol lalt lmet spc @rmet @l_held_num left  down up right
 )
 
 (deflayer normal
@@ -135,18 +135,19 @@
 (deflayer symbol
     esc XX XX XX  XX XX XX XX  XX XX XX XX  XX
     XX XX XX XX  XX XX XX XX  XX XX XX XX  XX XX
-    XX ' @dq ` @: @~ @^ @_  @| - @+ XX  XX XX
-    XX @@ / .  ; @? @# = XX XX XX XX  XX
-    XX \ @* ,  XX @! @& @$ XX XX XX XX
+    XX ' @dq ` @: @< @> @_  @| - @+ XX  XX XX
+    XX @@ / .  ; @? XX = @lp @rp XX XX  XX
+    XX [ ] ,  @& @! @{  @} XX XX XX XX
     XX XX XX XX  XX XX XX XX  XX XX XX
 )
 
-(deflayer bracket
+;; Minor symbols layer: @^ @~ @# @* @$ \
+(deflayer minor_symbol
     XX XX XX XX  XX XX XX XX  XX XX XX XX  XX
     XX XX XX XX  XX XX XX XX  XX XX XX XX  XX XX
-    XX XX XX XX  XX XX XX @lp @rp @< @> XX  XX XX
-    XX XX XX XX  XX XX XX @{  @} XX XX XX  XX 
-    XX XX XX XX  XX XX [ ]  XX XX XX XX
+    XX XX XX XX  XX @~ XX XX XX XX @^ XX  XX XX
+    XX XX @# @$  XX XX XX XX  XX XX XX XX  XX
+    XX XX @* XX  XX \ XX XX  XX XX XX XX
     XX XX XX XX  XX XX XX XX  XX XX XX
 )
 

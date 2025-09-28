@@ -58,7 +58,6 @@
     vi_shiftv (multi (macro @llinemove @rlinesel) @l_switch_visual)
     vi_newline (multi (macro @rlinemove 50 S-ret) @l_switch_base)
     vi_appendinsert (multi (macro right) @l_switch_base)
-    
 
     ;; Symbols
     ! S-1
@@ -165,6 +164,4 @@
       process-unmapped-keys yes
       log-layer-changes yes
 )
-
-
 

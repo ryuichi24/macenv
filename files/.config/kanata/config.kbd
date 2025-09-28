@@ -133,9 +133,9 @@
 (deflayer symbol
     esc XX XX XX  XX XX XX XX  XX XX XX XX  XX
     XX XX XX XX  XX XX XX XX  XX XX XX XX  XX XX
-    XX ' @dq ` @: XX XX @_  @| XX @^ XX  XX XX
-    XX @@ / .  ; @? @# XX XX XX XX XX  XX
-    XX \ @* ,  @~ @! @& @$ XX XX XX XX
+    XX ' @dq ` @: @~ @^ @_  @| - @+ XX  XX XX
+    XX @@ / .  ; @? @# = XX XX XX XX  XX
+    XX \ @* ,  XX @! @& @$ XX XX XX XX
     XX XX XX XX  XX XX XX XX  XX XX XX
 )
 

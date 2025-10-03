@@ -4,7 +4,7 @@
     tab q w e  r t y u  i o p [  ] \
     caps a s d  f g h j  k l ; '  ret 
     lsft z x c  v b n m  , . / rsft 
-    fn lctl lalt lmet  spc rmet ralt left  down up right
+    fn lctl lalt lmet  spc rmet ralt left down up right
 )
 
 (defvar
@@ -20,10 +20,10 @@
 
     ;; Layer while held
     l_symbol (layer-while-held symbol)
-    l_held_s_visual (layer-while-held s_visual)
+    l_held_s_normal (layer-while-held s_normal)
     l_held_num (layer-while-held num)
     l_held_minor_symbol (layer-while-held minor_symbol)
-    
+    l_held_ctrl (layer-while-held ctrl)
 
     ;; Layer switch
     l_switch_base (layer-switch base)
@@ -33,6 +33,8 @@
 
     ;; Layer Keys
     rmet (tap-hold $tap-time $hold-time ret @l_symbol)
+
+    
 
     ;; Key combo
     lsel S-left
@@ -49,8 +51,11 @@
     undo M-z
     rwordmove A-right
     lwordmove A-left
+    fdel C-d
 
     ;; Macro
+    gojumpdown (macro down down down down down down down down down down down down down down down down down down down down down down down down down down down)
+    gojumpup (macro up up up up up up up up up up up up up up up up up up up up up up up up up up up)
 
     ;; Multi
     vi_yank (multi (macro @copy 50 left) @l_switch_normal)
@@ -58,6 +63,8 @@
     vi_shiftv (multi (macro @llinemove @rlinesel) @l_switch_visual)
     vi_newline (multi (macro @rlinemove 50 S-ret) @l_switch_base)
     vi_appendinsert (multi (macro right) @l_switch_base)
+    vi_appendinsertatend (multi (macro @rlinemove) @l_switch_base)
+    vi_appendinsertatfirst (multi (macro @llinemove) @l_switch_base)
 
     ;; Symbols
     ! S-1
@@ -93,6 +100,12 @@
     sls M-spc ;; Spotlight Search
     dtn S-C-A-M-f5 ;; Dictation
     dnd S-C-A-M-f6 ;; Do Not Disturb
+
+    ;; Tap Dance
+    rsfttapdance (tap-dance 200 (
+        rsft 
+        @l_switch_normal
+    ))
 )
 
 (deflayer base 
@@ -100,7 +113,7 @@
     ` 1 2 3  4 5 6 7  8 9 0 -  = bspc
     tab q w e  r t y u  i o p [  ] \
     lctl a s d  f g h j  k l ; ' ret
-    lsft z x c  v b n m  , . / @l_switch_normal
+    lsft z x c  v b n m  , . / @rsfttapdance
     fn @l_held_minor_symbol lalt lmet spc @rmet @l_held_num left  down up right
 )
 
@@ -108,11 +121,28 @@
     esc XX XX XX  XX XX XX XX  XX XX XX XX  XX
     XX XX XX XX  XX XX XX XX  XX XX XX XX  XX XX
     XX XX @rwordmove XX  XX XX XX @undo  @l_switch_base @vi_newline @paste XX  XX XX
-    XX @vi_appendinsert XX XX  XX XX left down  up right XX XX XX
-    @l_held_s_visual XX XX XX  @l_switch_visual @lwordmove XX XX  XX XX XX XX
+    @l_held_ctrl @vi_appendinsert XX XX  XX XX left down  up right XX XX XX
+    @l_held_s_normal XX @fdel XX  @l_switch_visual @lwordmove XX XX  XX XX XX XX
+    XX XX XX XX  XX ret XX XX  XX XX XX
+)
+
+(deflayer s_normal
+    esc XX XX XX  XX XX XX XX  XX XX XX XX  XX
+    XX XX XX XX  XX XX XX XX  XX XX XX XX  XX XX
+    XX XX XX XX  XX XX XX XX  @vi_appendinsertatfirst XX XX XX  XX XX
+    XX @vi_appendinsertatend XX XX XX XX XX XX XX XX XX XX  XX
+    XX XX XX XX  @vi_shiftv XX XX XX  XX XX XX XX 
     XX XX XX XX  XX XX XX XX  XX XX XX
 )
 
+(deflayer ctrl
+    esc XX XX XX  XX XX XX XX  XX XX XX XX  XX
+    XX XX XX XX  XX XX XX XX  XX XX XX XX  XX bspc
+    XX XX XX XX  XX XX XX @gojumpup  XX XX XX XX  XX XX
+    XX XX XX @gojumpdown  XX XX XX XX  XX XX XX XX  XX 
+    XX XX XX XX  XX XX XX XX  XX XX XX XX 
+    XX XX XX XX  XX XX XX XX  XX XX XX
+)
 
 (deflayer visual
     esc XX XX XX  XX XX XX XX  XX XX XX XX  XX
@@ -123,14 +153,6 @@
     XX lctl lalt lmet  XX XX XX XX  XX XX XX
 )
 
-(deflayer s_visual
-    esc XX XX XX  XX XX XX XX  XX XX XX XX  XX
-    XX XX XX XX  XX XX XX XX  XX XX XX XX  XX XX
-    XX XX XX XX  XX XX XX XX  XX XX XX XX  XX XX
-    XX XX XX XX  XX XX XX XX XX XX XX XX  XX
-    XX XX XX XX  @vi_shiftv XX XX XX  XX XX XX XX 
-    XX XX XX XX  XX XX XX XX  XX XX XX
-)
 
 (deflayer symbol
     esc XX XX XX  XX XX XX XX  XX XX XX XX  XX
@@ -161,7 +183,11 @@
 )
 
 (defcfg
-      process-unmapped-keys yes
-      log-layer-changes yes
+    process-unmapped-keys yes
+    log-layer-changes yes
+
+    ;; macos-dev-names-exclude ()
+
+    ;; macos-dev-names-include ()
 )
 

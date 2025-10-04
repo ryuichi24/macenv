@@ -44,6 +44,16 @@
         lctl
     )
 
+    z(tap-hold $tap-time $hold-time 
+        z 
+        lsft
+    )
+
+    /(tap-hold $tap-time $hold-time 
+        / 
+        rsft
+    )
+
     ;; Key combo
     lsel S-left
     rsel S-right
@@ -110,6 +120,7 @@
         rsft 
         @l_switch_normal
     ))
+
 )
 
 (deflayer base 
@@ -117,7 +128,7 @@
     ` 1 2 3  4 5 6 7  8 9 0 -  = bspc
     tab q w e  r t y u  i o p [  ] \
     lctl @a s d  f g h j  k l @ret ' ret
-    lsft z x c  v b n m  , . / @rsfttapdance
+    lsft @z x c  v b n m  , . @/ @rsfttapdance
     fn lmet lalt @lmet spc @rmet @rmet left  down up right
 )
 
@@ -170,9 +181,9 @@
 (deflayer bracket
     XX XX XX XX  XX XX XX XX  XX XX XX XX  XX
     XX XX XX XX  XX XX XX XX  XX XX XX XX  XX XX
-    XX XX XX XX  XX XX = @lp @rp @< @> XX  XX XX
-    XX XX XX XX  XX XX @: @{  @} @| @? XX  XX
-    XX XX XX XX  XX XX ; [ ] . / XX
+    XX tab XX XX  XX XX = @lp @rp @< @> XX  XX XX
+    XX XX XX XX  XX XX @: @{  @} @| XX XX  XX
+    XX XX XX XX  XX XX ; [ ] XX XX XX
     XX XX XX XX  XX XX XX XX  XX XX XX
 )
 

@@ -25,3 +25,9 @@ precmd() {
   # sets the tab title to current dir
   echo -ne "\e]1;${PWD##*/}\a"
 }
+
+
+# disable flow control (ctrl-s to freeze, ctrl-q to unfreeze)
+# This is to allow using ctrl-s in vim or tmux
+stty -ixon
+

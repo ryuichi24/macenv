@@ -19,11 +19,11 @@
     lclick mltp
 
     ;; Layer while held
-    l_symbol (layer-while-held symbol)
     l_held_s_normal (layer-while-held s_normal)
     l_held_num (layer-while-held num)
-    l_held_minor_symbol (layer-while-held minor_symbol)
     l_held_ctrl (layer-while-held ctrl)
+    l_held_bracket (layer-while-held bracket)
+    l_held_symbol (layer-while-held symbol)
 
     ;; Layer switch
     l_switch_base (layer-switch base)
@@ -32,8 +32,8 @@
     l_switch_num (layer-switch num)
 
     ;; Layer Keys
-    rmet (tap-hold $tap-time $hold-time ret @l_symbol)
-
+    lmet (tap-hold $tap-time $hold-time esc @l_held_bracket)
+    rmet (tap-hold $tap-time $hold-time fn @l_held_symbol)
     
 
     ;; Key combo
@@ -91,10 +91,6 @@
     dq S-'
     ;;
 
-    ;; NOTE: temporary disabled
-    ;; lmet (tap-hold $tap-time $hold-time bspc lmet)
-    ;; rmet (tap-hold $tap-time $hold-time ret lmet)
-
     ;; MacOS specific keys
     mc C-up ;; Mission Control
     sls M-spc ;; Spotlight Search
@@ -112,9 +108,9 @@
     esc  🔅    🔆    @mc   @sls  @dtn  @dnd  ◀◀    ▶⏸    ▶▶    🔇    🔉    🔊
     ` 1 2 3  4 5 6 7  8 9 0 -  = bspc
     tab q w e  r t y u  i o p [  ] \
-    lctl a s d  f g h j  k l ; ' ret
+    lctl a s d  f g h j  k l ret ' ret
     lsft z x c  v b n m  , . / @rsfttapdance
-    fn @l_held_minor_symbol lalt lmet spc @rmet @l_held_num left  down up right
+    fn lmet lalt @lmet spc @rmet @rmet left  down up right
 )
 
 (deflayer normal
@@ -153,23 +149,22 @@
     XX lctl lalt lmet  XX XX XX XX  XX XX XX
 )
 
-
 (deflayer symbol
     esc XX XX XX  XX XX XX XX  XX XX XX XX  XX
     XX XX XX XX  XX XX XX XX  XX XX XX XX  XX XX
-    XX ' @dq ` @: @< @> @_  @| - @+ XX  XX XX
-    XX @@ / .  ; @? XX = @lp @rp XX XX  XX
-    XX [ ] ,  @& @! @{  @} XX XX XX XX
+    XX ' @dq ` - @+ XX @_  XX XX XX XX  XX XX
+    XX @@ @# @$  @~ \ XX XX XX XX XX XX  XX
+    XX @% @* @^  @& @! XX XX XX XX XX XX
     XX XX XX XX  XX XX XX XX  XX XX XX
 )
 
-;; Minor symbols layer: @^ @~ @# @* @$ \
-(deflayer minor_symbol
+;; Brackets layer
+(deflayer bracket
     XX XX XX XX  XX XX XX XX  XX XX XX XX  XX
     XX XX XX XX  XX XX XX XX  XX XX XX XX  XX XX
-    XX XX XX XX  XX @~ XX XX XX XX @^ XX  XX XX
-    XX XX @# @$  XX XX XX XX  XX XX XX XX  XX
-    XX XX @* XX  XX \ XX XX  XX XX XX XX
+    XX XX XX XX  XX XX = @lp @rp @< @> XX  XX XX
+    XX XX XX XX  XX XX @: @{  @} @| @? XX  XX
+    XX XX XX XX  XX XX ; [ ] . / XX
     XX XX XX XX  XX XX XX XX  XX XX XX
 )
 

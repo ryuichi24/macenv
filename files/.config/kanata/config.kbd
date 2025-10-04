@@ -8,8 +8,10 @@
 )
 
 (defvar
-  tap-time 150
-  hold-time 150 
+  ;; to repease the tap key
+  tap-time 200
+  ;; to trigger the hold action after this time
+  hold-time 200 
   hold-time-slow 300 
 )
 
@@ -34,7 +36,13 @@
     ;; Layer Keys
     lmet (tap-hold $tap-time $hold-time bspc @l_held_bracket)
     rmet (tap-hold $tap-time $hold-time fn @l_held_symbol)
-    
+    ret(tap-hold $tap-time $hold-time ret @l_held_num)
+
+    ;; Hold-tap keys
+    a(tap-hold $tap-time $hold-time 
+        a 
+        lctl
+    )
 
     ;; Key combo
     lsel S-left
@@ -108,7 +116,7 @@
     esc  🔅    🔆    @mc   @sls  @dtn  @dnd  ◀◀    ▶⏸    ▶▶    🔇    🔉    🔊
     ` 1 2 3  4 5 6 7  8 9 0 -  = bspc
     tab q w e  r t y u  i o p [  ] \
-    lctl a s d  f g h j  k l ret ' ret
+    lctl @a s d  f g h j  k l @ret ' ret
     lsft z x c  v b n m  , . / @rsfttapdance
     fn lmet lalt @lmet spc @rmet @rmet left  down up right
 )
@@ -174,7 +182,7 @@
     XX 7 8 9  XX XX XX XX  XX XX XX XX  XX XX
     XX 4 5 6  XX XX XX XX  XX XX XX XX  XX 
     XX 1 2 3  XX XX XX XX  XX XX XX XX 
-    XX XX 0 XX  XX XX XX XX  XX XX XX
+    XX XX 0 lmet  XX XX XX XX  XX XX XX
 )
 
 (defcfg

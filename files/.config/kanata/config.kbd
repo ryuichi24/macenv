@@ -32,7 +32,7 @@
     l_switch_num (layer-switch num)
 
     ;; Layer Keys
-    lmet (tap-hold $tap-time $hold-time esc @l_held_bracket)
+    lmet (tap-hold $tap-time $hold-time bspc @l_held_bracket)
     rmet (tap-hold $tap-time $hold-time fn @l_held_symbol)
     
 
@@ -117,7 +117,7 @@
     esc XX XX XX  XX XX XX XX  XX XX XX XX  XX
     XX XX XX XX  XX XX XX XX  XX XX XX XX  XX XX
     XX XX @rwordmove XX  XX XX XX @undo  @l_switch_base @vi_newline @paste XX  XX XX
-    @l_held_ctrl @vi_appendinsert XX XX  XX XX left down  up right XX XX XX
+    @l_held_ctrl @vi_appendinsert XX XX  XX XX left down  up right ret XX XX
     @l_held_s_normal XX @fdel XX  @l_switch_visual @lwordmove XX XX  XX XX XX XX
     XX XX XX XX  XX ret XX XX  XX XX XX
 )

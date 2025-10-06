@@ -128,7 +128,7 @@
     ` 1 2 3  4 5 6 7  8 9 0 -  = bspc
     tab q w e  r t y u  i o p [  ] \
     lctl @a s d  f g h j  k l @ret ' ret
-    lsft @z x c  v b n m  , . @/ @rsfttapdance
+    lsft z x c  v b n m  , . @/ @rsfttapdance
     fn lmet lalt @lmet spc @rmet @rmet left  down up right
 )
 
@@ -182,10 +182,10 @@
 (deflayer bracket
     XX XX XX XX  XX XX XX XX  XX XX XX XX  XX
     XX XX XX XX  XX XX XX XX  XX XX XX XX  XX XX
-    XX tab XX XX  M-r XX = @lp @rp @< @> XX  XX XX
+    XX tab XX XX  M-r M-t = @lp @rp @< @> XX  XX XX
     XX M-a M-s XX  M-f XX @: @{  @} @| XX XX  XX
     XX M-z M-x M-c  M-v XX ; [ ] XX XX XX
-    XX XX XX XX  XX XX XX XX  XX XX XX
+    XX XX XX XX  M-spc XX XX XX  XX XX XX
 )
 
 (deflayer num

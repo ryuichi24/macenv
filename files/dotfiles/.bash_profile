@@ -17,6 +17,10 @@ source $(brew --prefix nvm)/nvm.sh
 
 # go
 export PATH="$PATH:$(go env GOPATH)/bin"
+# zeromq
+export CGO_LDFLAGS="-L$(brew --prefix zeromq)/lib"
+export CGO_CFLAGS="-I$(brew --prefix zeromq)/include"
+
 
 # iterm2
 DISABLE_AUTO_TITLE="true"

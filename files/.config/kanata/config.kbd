@@ -187,7 +187,7 @@
 (deflayer bracket
     XX XX XX XX  XX XX XX XX  XX XX XX XX  XX
     XX XX XX XX  XX XX XX XX  XX XX XX XX  XX XX
-    XX tab XX XX  M-r M-t = @lp @rp @< @> XX  XX XX
+    XX tab XX esc  M-r M-t = @lp @rp @< @> XX  XX XX
     XX M-a M-s XX  M-f XX @: @{  @} @| XX XX  XX
     XX M-z M-x M-c  M-v XX ; [ ] XX XX XX
     XX XX XX XX  M-spc XX XX XX  XX XX XX

@@ -22,15 +22,17 @@ BREW_CLIS=(
     "cmake"   # Build system
     # "ffmpeg"  # Multimedia framework
     "neovim"  # Text editor
+    "font-hack-nerd-font" # icons for terminal and useful articale: https://osatoh.com/entry/2023/09/19/200807
     "lua"      # Lua programming language
     # "lua-language-server"   # Language server for Lua
     "kanata"    # keymap remapper
     "ollama"  # AI models tool
     # "yt-dlp"  # Media downloader
-    # "tree"    # Directory listing command
-    # "ripgrep" # Fast text search tool
-    # "lazygit"
-    # "gh" # GitHub CLI
+    "tree"    # Directory listing command
+    "ripgrep" # Fast text search tool
+    "lazygit"
+    "gh" # GitHub CLI
+    "fzf" #
 
     # "diff-so-fancy" # Improved diff output
     # "imagemagick"   # Image manipulation tools

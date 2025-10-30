@@ -229,7 +229,8 @@ automatically-unhide-macos-hidden-apps = false
     down = 'volume down'
     up = 'volume up'
     shift-down = ['volume set 0', 'mode main']
-    
+
+# to list available app ids of currently running apps, run: 'aerospace list-apps'
 [[on-window-detected]]
 if.app-id = "com.microsoft.VSCode"
 run = "move-node-to-workspace W"
@@ -249,4 +250,32 @@ run = "move-node-to-workspace B"
 [[on-window-detected]]
 if.app-id = "com.hnc.Discord"
 run = "move-node-to-workspace D"
+
+[[on-window-detected]]
+if.app-id = "md.obsidian"
+run = "move-node-to-workspace N"
+
+[[on-window-detected]]
+if.app-id = "com.bitwarden.desktop"
+run = "move-node-to-workspace U"
+
+[[on-window-detected]]
+if.app-id = "com.readdle.SparkDesktop"
+run = "move-node-to-workspace U"
+
+[[on-window-detected]]
+if.app-id = "com.apple.finder"
+run = "move-node-to-workspace F"
+
+[[on-window-detected]]
+if.app-id = "jp.naver.line.mac"
+run = "move-node-to-workspace S"
+
+[[on-window-detected]]
+if.app-id = "tech.naya.nayaflow"
+run = "move-node-to-workspace C"
+
+[[on-window-detected]]
+if.app-id = "com.microsoft.teams2"
+run = "move-node-to-workspace M"
 

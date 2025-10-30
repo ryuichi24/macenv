@@ -1,7 +1,8 @@
 # bash
+alias ss='source ~/.bashrc && echo "Reloaded .bashrc successfully!"'
 alias ls='ls -larth --color=auto'
 alias ..="cd .. && ls"
-alias cl="clear"
+alias cc="clear"
 alias uuid='uuidgen | tr "[:upper:]" "[:lower:]" | tr -d "\n" | pbcopy && echo "UUID copied to clipboard"'
 
 # neovim

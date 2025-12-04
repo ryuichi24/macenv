@@ -45,6 +45,7 @@ BREW_CLIS=(
     "nikitabobko/tap/aerospace" # native Tiling window manager for macOS
     "tmux"    # Terminal
     "sst/tap/opencode" # AI Model CLI Client
+    "uv" # python manager
 )
 
 # =============================================
@@ -89,6 +90,7 @@ CASK_APPS=(
     # "font-symbols-only-nerd-font"  # Nerd fonts
     "qt-creator"           # Qt IDE
     # font-meslo-lg-nerd-font # font
+    "figma"                # Design tool
 )
 
 # =============================================

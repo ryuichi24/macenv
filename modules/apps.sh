@@ -75,7 +75,7 @@ CASK_APPS=(
     # "rectangle"          # Window manager
     "raycast"            # Productivity tool
     # "alt-tab"            # Window switcher
-    # "cryptomator"        # Encryption tool
+    "cryptomator"        # Encryption tool
     "obs"                # Streaming software
     "blackhole-2ch"      # Audio driver
     "blackhole-16ch"     # Audio driver
@@ -90,6 +90,7 @@ CASK_APPS=(
     # "font-symbols-only-nerd-font"  # Nerd fonts
     "qt-creator"           # Qt IDE
     # font-meslo-lg-nerd-font # font
+    "smoothcsv"          # CSV editor: https://smoothcsv.com/ja/
     "figma"                # Design tool
     # tools to manager manga for kindle
     # article: https://xtech.nikkei.com/atcl/nxt/column/18/01736/072800001/

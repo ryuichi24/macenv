@@ -2,6 +2,12 @@
 
 shopt -s nullglob dotglob # Enable nullglob and dotglob to include hidden files
 
+# Git clone submodule if not already done :https://zenn.dev/okina/articles/7cd4f80b435cc1
+if [ ! -d "./files/.config/nvim/.git" ]; then
+    echo "Cloning submodules..."
+    git submodule update --init --recursive
+fi
+
 # Define a function to create a symlink to a directory
 symlink_dir() {
     local src_dir="$1"      # Original directory to link to

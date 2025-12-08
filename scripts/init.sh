@@ -160,10 +160,10 @@ for item in "${BREW_TAPS[@]}"; do
         echo "$item is already registered"
         continue
     fi
-    # if ! brew tap "$item"; then
-    #     echo "Failed to register a tap: $item"
-    #     return 1
-    # fi
+    if ! brew tap "$item"; then
+         echo "Failed to register a tap: $item"
+         return 1
+     fi
 done
 
 for item in "${BREW_CLIS[@]}"; do
@@ -172,11 +172,11 @@ for item in "${BREW_CLIS[@]}"; do
         echo "$item is already installed."
         continue
     fi
-    #
-    # if ! brew install "$item"; then
-    #     echo "Failed to install CLI tool: $item"
-    #     return 1
-    # fi
+
+     if ! brew install "$item"; then
+         echo "Failed to install CLI tool: $item"
+         return 1
+     fi
     echo "Successfully installed CLI tool: $item"
 done
 
@@ -187,10 +187,10 @@ for item in "${CASK_APPS[@]}"; do
         continue
     fi
 
-    # if ! brew install --cask "$item"; then
-    #     echo "Failed to install GUI app: $item"
-    #     return 1
-    # fi
+     if ! brew install --cask "$item"; then
+         echo "Failed to install GUI app: $item"
+         return 1
+     fi
     echo "Successfully installed GUI app: $item"
 done
 

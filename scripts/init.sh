@@ -173,6 +173,12 @@ for item in "${BREW_CLIS[@]}"; do
         continue
     fi
 
+    if "$item" == "neovim" ; then
+        echo "neovim is deprecated, installing from head for nightly features"
+        # https://zenn.dev/cp_r/articles/8614e846cf8ed6
+        brew install neovim --HEAD
+        continue
+
      if ! brew install "$item"; then
          echo "Failed to install CLI tool: $item"
          return 1

@@ -91,6 +91,10 @@ CASK_APPS=(
     "qt-creator"           # Qt IDE
     # font-meslo-lg-nerd-font # font
     "figma"                # Design tool
+    # tools to manager manga for kindle
+    # article: https://xtech.nikkei.com/atcl/nxt/column/18/01736/072800001/
+    # usb manger: https://www.amazon.com/gp/help/customer/display.html?nodeId=TCUBEdEkbIhK07ysFu
+    "kindle-comic-converter" # Convert manga/comic to Kindle format file
 )
 
 # =============================================

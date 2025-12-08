@@ -4,6 +4,7 @@ alias ls='ls -larth --color=auto'
 alias ..="cd .. && ls"
 alias cc="clear"
 alias uuid='uuidgen | tr "[:upper:]" "[:lower:]" | tr -d "\n" | pbcopy && echo "UUID copied to clipboard"'
+alias cdc='cd "$(pbpaste)"' # cd into path copied to clipboard
 
 # neovim
 alias vi='NVIM_APPNAME=nvim/src nvim' # https://wiki.archlinux.org/title/Neovim
@@ -27,3 +28,10 @@ alias initkt='sudo kanata -c $HOME/.config/kanata/config.kbd -d'
 # util
 # general
 alias ch="cat ~/.bashrc"
+alias appd="cd $HOME/Library/Application\ Support/"
+
+# quick edit
+alias ee='cd $HOME/Dev/personal/projects/macenv && vi .'
+alias nn='cd $HOME/Dev/personal/projects/macenv/files/.config/nvim && vi .'
+alias tt='cd $HOME/Dev/personal/tmp/todos && vi .'
+

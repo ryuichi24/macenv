@@ -26,6 +26,7 @@
     l_held_ctrl (layer-while-held ctrl)
     l_held_bracket (layer-while-held bracket)
     l_held_symbol (layer-while-held symbol)
+    l_held_nav (layer-while-held nav)
 
     ;; Layer switch
     l_switch_base (layer-switch base)
@@ -35,7 +36,8 @@
 
     ;; Layer Keys
     lmet (tap-hold $tap-time $hold-time bspc @l_held_bracket)
-    rmet (tap-hold $tap-time $hold-time fn @l_held_symbol)
+    rmet (tap-hold $tap-time $hold-time rmet @l_held_nav)
+    spc (tap-hold $tap-time $hold-time spc @l_held_symbol)
     ret(tap-hold $tap-time $hold-time ret @l_held_num)
 
     ;; Hold-tap keys
@@ -134,7 +136,7 @@
     tab q w e  r t y u  i o p [  ] \
     lctl @a s d  f g h j  k l @ret ' ret
     lsft z x c  v b n m  , . @/ @rsfttapdance
-    fn lmet lalt @lmet spc @rmet @rmet left  down up right
+    fn lalt lmet @lmet @spc @rmet ralt left  down up right
 )
 
 (deflayer normal
@@ -187,10 +189,19 @@
 (deflayer bracket
     XX XX XX XX  XX XX XX XX  XX XX XX XX  XX
     XX XX XX XX  XX XX XX XX  XX XX XX XX  XX XX
-    XX tab XX esc  M-r M-t = @lp @rp @< @> XX  XX XX
+    XX tab XX esc  M-r M-t = @lp @rp - + XX  XX XX
     XX M-a M-s XX  M-f XX @: @{  @} @| XX XX  XX
     XX M-z M-x M-c  M-v XX ; [ ] XX XX XX
     XX XX XX XX  M-spc XX XX XX  XX XX XX
+)
+
+(deflayer nav
+    esc XX XX XX  XX XX XX XX  XX XX XX XX  XX
+    XX XX XX XX  XX XX XX XX  XX XX XX XX  XX bspc
+    XX XX XX XX  XX XX XX XX  XX XX XX XX  XX XX
+    XX XX XX XX  XX XX left down up right XX XX  XX 
+    XX XX XX XX  XX XX XX XX  XX XX XX XX 
+    XX XX XX XX  XX XX XX XX  XX XX XX
 )
 
 (deflayer num

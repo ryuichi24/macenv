@@ -17,7 +17,38 @@
 
 
 (defalias
-    ;; name alaias
+
+    ;; Symbols
+    ! S-1
+    @ S-2
+    # S-3
+    $ S-4
+    % S-5
+    ^ S-6
+    & S-7
+    * S-8
+    ? S-/
+    + S-=
+    _ S--
+    | S-\
+    : S-;
+    ~ S-`
+    ;; brackets
+    lp S-9
+    rp S-0
+    { S-[
+    } S-]
+    < S-,
+    > S-.
+    dq S-'
+    ;;
+
+    ;; MacOS specific keys
+    mc C-up ;; Mission Control
+    sls M-spc ;; Spotlight Search
+    dtn S-C-A-M-f5 ;; Dictation
+    dnd S-C-A-M-f6 ;; Do Not Disturb
+
     lclick mltp
 
     ;; Layer while held
@@ -49,6 +80,16 @@
     z(tap-hold $tap-time $hold-time 
         z 
         lsft
+    )
+
+    x(tap-hold $tap-time $hold-time 
+        x 
+        lalt
+    )
+
+    *lalt(tap-hold $tap-time $hold-time 
+        @* 
+        lalt
     )
 
     /(tap-hold $tap-time $hold-time 
@@ -86,36 +127,6 @@
     vi_appendinsertatend (multi (macro @rlinemove) @l_switch_base)
     vi_appendinsertatfirst (multi (macro @llinemove) @l_switch_base)
 
-    ;; Symbols
-    ! S-1
-    @ S-2
-    # S-3
-    $ S-4
-    % S-5
-    ^ S-6
-    & S-7
-    * S-8
-    ? S-/
-    + S-=
-    _ S--
-    | S-\
-    : S-;
-    ~ S-`
-    ;; brackets
-    lp S-9
-    rp S-0
-    { S-[
-    } S-]
-    < S-,
-    > S-.
-    dq S-'
-    ;;
-
-    ;; MacOS specific keys
-    mc C-up ;; Mission Control
-    sls M-spc ;; Spotlight Search
-    dtn S-C-A-M-f5 ;; Dictation
-    dnd S-C-A-M-f6 ;; Do Not Disturb
 
     ;; Tap Dance
     rsfttapdance (tap-dance 200 (
@@ -135,7 +146,7 @@
     ` 1 2 3  4 5 6 7  8 9 0 -  = bspc
     tab q w e  r t y u  i o p [  ] \
     XX @a s d  f g h j  k l @ret ' ret
-    lsft z x c  v b n m  , . @/ @rsfttapdance
+    lsft z @x c  v b n m  , . @/ @rsfttapdance
     fn lalt lmet @lmet @spc @rmet ralt left  down up right
 )
 
@@ -181,7 +192,7 @@
     XX XX XX XX  XX XX XX XX  XX XX XX XX  XX XX
     XX ' @dq ` - @+ 7 8 9 XX XX XX  XX XX
     XX @@ @# @$  @~ \ 4 5 6 XX XX XX  XX
-    lsft @% @* @^  @& @! 1 2 3 XX XX XX
+    lsft @% @*lalt @^  @& @! 1 2 3 XX XX XX
     XX lalt lmet lmet  XX 0 XX XX  XX XX XX
 )
 

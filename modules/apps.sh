@@ -53,6 +53,7 @@ BREW_CLIS=(
 # =============================================
 CASK_APPS=(
     "iterm2"              # Terminal emulator
+    "ghostty"                # Terminal emulator
     "claude"               # AI assistant
     # "windsurf"             # Network utility
     "cursor"               # Code editor
@@ -96,6 +97,9 @@ CASK_APPS=(
     # article: https://xtech.nikkei.com/atcl/nxt/column/18/01736/072800001/
     # usb manger: https://www.amazon.com/gp/help/customer/display.html?nodeId=TCUBEdEkbIhK07ysFu
     "kindle-comic-converter" # Convert manga/comic to Kindle format file
+    "obsidian"               # Note-taking app
+    "shottr"                # Screenshot tool
+    "keycastr"              # Keystroke visualizer
 )
 
 # =============================================

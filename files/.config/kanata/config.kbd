@@ -77,13 +77,13 @@
         lctl
     )
 
-    z(tap-hold $tap-time $hold-time 
-        z 
-        lsft
-    )
-
     x(tap-hold $tap-time $hold-time 
         x 
+        lalt
+    )
+
+    z(tap-hold $tap-time $hold-time
+        z
         lalt
     )
 
@@ -146,7 +146,7 @@
     ` 1 2 3  4 5 6 7  8 9 0 -  = bspc
     tab q w e  r t y u  i o p [  ] \
     XX @a s d  f g h j  k l @ret ' ret
-    lsft z @x c  v b n m  , . @/ @rsfttapdance
+    lsft @z x c  v b n m  , . @/ @rsfttapdance
     fn lalt lmet @lmet @spc @rmet ralt left  down up right
 )
 

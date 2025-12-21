@@ -100,6 +100,7 @@ CASK_APPS=(
     "obsidian"               # Note-taking app
     "shottr"                # Screenshot tool
     "keycastr"              # Keystroke visualizer
+    "jordanbaird-ice"        # System Tray manger
 )
 
 # =============================================

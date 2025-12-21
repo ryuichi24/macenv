@@ -174,10 +174,11 @@ for item in "${BREW_CLIS[@]}"; do
     fi
 
     if "$item" == "neovim" ; then
-        echo "neovim is deprecated, installing from head for nightly features"
+        echo "neovim is dectected, installing from head for nightly features"
         # https://zenn.dev/cp_r/articles/8614e846cf8ed6
         brew install neovim --HEAD
         continue
+    fi
 
      if ! brew install "$item"; then
          echo "Failed to install CLI tool: $item"
@@ -200,29 +201,23 @@ for item in "${CASK_APPS[@]}"; do
     echo "Successfully installed GUI app: $item"
 done
 
-for mas_id in ${MAS_APPS[@]}; do
-    mas_name=$(mas search $mas_id | awk '{ print $2 }')
-    echo "Installing: $mas_name ($mas_id)"
+# =============================================
+#  Mas App installation
+# =============================================
 
-    # temp
+installed_ids="$(mas list | awk '{print $1}')"
+
+for mas_app_entry in ${MAS_APPS[@]}; do
+    mas_name="${mas_app_entry%%:*}"
+    mas_id="${mas_app_entry##*:}"
+
+  if printf '%s\n' "$installed_ids" | grep -qx "$mas_id"; then
+    echo "✓ $mas_name already installed — skipping"
     continue
+  fi
 
-    output=$(mas install "$mas_id" 2>&1)
-    status=$?
-
-    # "-ne" means "not equal" for "numbers"
-    if [[ $status -ne 0 ]]; then
-        echo "Failed to install $mas_name ($mas_id). Are you logged into the Mac App Store?"
-        return 1
-    fi
-
-    echo "$output" | grep -q "already installed"
-    already_installed=$?
-    if [[ $already_installed -eq 0 ]]; then
-        echo "$mas_name is already installed."
-        continue
-    fi
-
+  echo "→ Installing $mas_name ($mas_id)"
+  mas install "$mas_id"
     echo "Successfully installed $mas_name"
 done
 

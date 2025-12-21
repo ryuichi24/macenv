@@ -106,10 +106,10 @@ CASK_APPS=(
 # Mac App Store Applications
 # =============================================
 MAS_APPS=(
-    539883307  # LINE
-    1507246666 # Presentify
-    1517772049 # Urban VPN Desktop
-    # 497799835  # Xcode
-    411213048  # LadioCast
+    "LINE:539883307"
+    # "Presentify:1507246666"
+    "Urban_VPN_Desktop:1517772049"
+    # "Xcode:497799835"
+    "LadioCast:411213048"
 )
 

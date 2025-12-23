@@ -248,7 +248,8 @@ run = "move-node-to-workspace T"
 
 [[on-window-detected]]
 if.app-id = "com.mitchellh.ghostty"
-run = "move-node-to-workspace T"
+# https://ghostty.org/docs/help/macos-tiling-wms#workarounds
+run = ["move-node-to-workspace T", "layout floating"]
 
 [[on-window-detected]]
 if.app-id = "com.brave.Browser"

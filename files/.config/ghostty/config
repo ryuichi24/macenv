@@ -1,0 +1,29 @@
+# theme
+theme = tokyonight
+
+# font
+font-family = "JetBrains Mono"
+font-family = "BIZ UDGothic Bold"
+font-size = 15
+font-thicken = true
+
+# background
+background-opacity = 0.8
+background-blur-radius = 0
+
+# visual
+unfocused-split-opacity = 0.7
+
+# cursor
+cursor-opacity = 0.5
+cursor-color = ffffff
+
+# window
+window-padding-x = 4
+window-padding-y = 4
+window-padding-balance = true
+window-save-state = always
+
+# macos
+macos-titlebar-style = tabs
+macos-option-as-alt = true

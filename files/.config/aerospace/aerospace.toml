@@ -181,7 +181,7 @@ automatically-unhide-macos-hidden-apps = false
     alt-shift-z = ['move-node-to-workspace Z', "workspace Z"]
 
     alt-shift-f = 'fullscreen' # Toggle fullscreen mode for the current window
-    alt-shift-u = 'layout floating' # Toggle floating mode for the current window
+    alt-shift-u = 'layout floating tiling' # Toggle floating mode for the current window
 
     # See: https://nikitabobko.github.io/AeroSpace/commands#workspace-back-and-forth
     alt-tab = 'workspace-back-and-forth'
@@ -273,6 +273,10 @@ run = "move-node-to-workspace U"
 
 [[on-window-detected]]
 if.app-id = "com.urban-vpn.mac"
+run = "move-node-to-workspace V"
+
+[[on-window-detected]]
+if.app-id = "dev.kdrag0n.MacVirt"
 run = "move-node-to-workspace V"
 
 [[on-window-detected]]

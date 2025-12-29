@@ -299,4 +299,11 @@ run = "move-node-to-workspace M"
 if.app-id = "com.figma.Desktop"
 run = ["move-node-to-workspace R"]
  
+[[on-window-detected]]
+if.app-id = "com.blackmagic-design.DaVinciResolve"
+run = ["move-node-to-workspace Y"]
+
+[[on-window-detected]]
+if.app-id = "com.obsproject.obs-studio"
+run = ["move-node-to-workspace O"]
 

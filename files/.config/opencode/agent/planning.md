@@ -102,7 +102,9 @@ Step-by-step explanation of the implementation order.
 <actual implementation code>
 ```
 
-### 8.2 File: <path/to/another-file>
+### 8.2 Demo
+
+Add a demo of the suggested implementation if applicable.
 
 ```<language>
 <actual implementation code>

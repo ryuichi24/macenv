@@ -1,0 +1,6 @@
+[user]
+	name = ryuichi24
+	email = ryuichi.nishi24@gmail.com
+
+[core]
+	excludesfile = /Users/ryu/.gitignore_global

@@ -1,0 +1,238 @@
+[
+    {
+        "key": "space s",
+        "command": "workbench.action.files.save",
+        "when": "neovim.mode !== 'insert' && !inQuickOpen && !terminalFocus && !inSettingsSearch"
+    },
+    // navigations
+    {
+        "key": "ctrl+h",
+        "command": "workbench.action.navigateLeft",
+        "when": "neovim.mode !== 'insert' && !inQuickOpen"
+    },
+    {
+        "key": "ctrl+l",
+        "command": "workbench.action.navigateRight",
+        "when": "neovim.mode !== 'insert' && !inQuickOpen"
+    },
+    {
+        "key": "ctrl+k",
+        "command": "workbench.action.navigateUp",
+        "when": "neovim.mode !== 'insert' && !inQuickOpen"
+    },
+    {
+        "key": "ctrl+j",
+        "command": "workbench.action.navigateDown",
+        "when": "neovim.mode !== 'insert' && !inQuickOpen"
+    },
+    // search
+    {
+        "key": "space f s",
+        "command": "workbench.action.findInFiles",
+        "when": "neovim.mode !== 'insert' && !inQuickOpen && !terminalFocus && !inSettingsSearch"
+    },
+    {
+        "key": "ctrl+n",
+        // in Default Keybindings at 4028
+        "command": "search.action.focusSearchList",
+        "when": "hasSearchResult && searchViewletFocus"
+    },
+    {
+        "key": "space f f",
+        "command": "workbench.action.quickOpen",
+        "when": "neovim.mode !== 'insert' && !inQuickOpen && !terminalFocus && !inSettingsSearch"
+    },
+    {
+        // git
+        "key": "spaces l g",
+        "command": "workbench.view.scm",
+        "when": "neovim.mode !== 'insert' && !inQuickOpen && !terminalFocus && !inSettingsSearch"
+    },
+    {
+        "key": "space l g",
+        "when": "neovim.mode !== 'insert' && !inQuickOpen && !terminalFocus && !inSettingsSearch",
+        "command": "runCommands",
+        "args": {
+            "commands": [
+                {
+                    "command": "workbench.action.terminal.toggleTerminal"
+                },
+                {
+                    "command": "workbench.action.toggleMaximizedPanel"
+                },
+                {
+                    "command": "workbench.action.terminal.sendSequence",
+                    "args": {
+                        "text": "lazygit\n"
+                    }
+                }
+            ]
+        }
+    },
+    // workaround for vscode neovim not supporting ctrl+u/d in normal mode
+    {
+        "command": "vscode-neovim.send",
+        "key": "ctrl+u",
+        "when": "editorTextFocus",
+        "args": "<C-u>"
+    },
+    {
+        "command": "vscode-neovim.send",
+        "key": "ctrl+d",
+        "when": "editorTextFocus",
+        "args": "<C-d>"
+    },
+    // pane management
+    {
+        "key": "space w l",
+        "command": "workbench.action.splitEditorRight",
+        "when": "neovim.mode !== 'insert' && !inQuickOpen && !terminalFocus && !inSettingsSearch"
+    },
+    {
+        "key": "space w h",
+        "command": "workbench.action.splitEditorLeft",
+        "when": "neovim.mode !== 'insert' && !inQuickOpen && !terminalFocus && !inSettingsSearch"
+    },
+    {
+        "key": "space w k",
+        "command": "workbench.action.splitEditorUp",
+        "when": "neovim.mode !== 'insert' && !inQuickOpen && !terminalFocus && !inSettingsSearch"
+    },
+    {
+        "key": "space w j",
+        "command": "workbench.action.splitEditorDown",
+        "when": "neovim.mode !== 'insert' && !inQuickOpen && !terminalFocus && !inSettingsSearch"
+    },
+    // terminal
+    {
+        "key": "space t t",
+        "command": "workbench.action.terminal.toggleTerminal",
+        "when": "neovim.mode !== 'insert' && !inQuickOpen && !terminalFocus && !inSettingsSearch"
+    },
+    {
+        "key": "space t p",
+        "command": "workbench.action.togglePanel",
+        "when": "neovim.mode !== 'insert' && !inQuickOpen && !terminalFocus && !inSettingsSearch"
+    },
+    {
+        "key": "space t k",
+        "command": "workbench.action.terminal.kill",
+        "when": "neovim.mode !== 'insert' && !inQuickOpen && !terminalFocus && !inSettingsSearch"
+    },
+    {
+        "key": "ctrl+s s s",
+        "command": "workbench.action.terminal.split",
+        "when": "neovim.mode !== 'insert' && !inQuickOpen && terminalFocus"
+    },
+    {
+        "key": "ctrl+s u s",
+        "command": "workbench.action.terminal.unsplit",
+        "when": "neovim.mode !== 'insert' && !inQuickOpen && terminalFocus"
+    },
+    {
+        "key": "ctrl+h",
+        "command": "workbench.action.terminal.focusPreviousPane",
+        "when": "neovim.mode !== 'insert' && !inQuickOpen && terminalFocus"
+    },
+    {
+        "key": "ctrl+l",
+        "command": "workbench.action.terminal.focusNextPane",
+        "when": "neovim.mode !== 'insert' && !inQuickOpen && terminalFocus"
+    },
+    //
+    {
+        "key": "ctrl+s g n",
+        "command": "workbench.action.terminal.new",
+        "when": "neovim.mode !== 'insert' && !inQuickOpen && terminalFocus"
+    },
+    {
+        "key": "ctrl+s 1",
+        "command": "workbench.action.terminal.focusAtIndex1",
+        "when": "neovim.mode !== 'insert' && !inQuickOpen && terminalFocus"
+    },
+    {
+        "key": "ctrl+s 2",
+        "command": "workbench.action.terminal.focusAtIndex2",
+        "when": "neovim.mode !== 'insert' && !inQuickOpen && terminalFocus"
+    },
+    {
+        "key": "ctrl+s 3",
+        "command": "workbench.action.terminal.focusAtIndex3",
+        "when": "neovim.mode !== 'insert' && !inQuickOpen && terminalFocus"
+    },
+    {
+        "key": "ctrl+s 4",
+        "command": "workbench.action.terminal.focusAtIndex4",
+        "when": "neovim.mode !== 'insert' && !inQuickOpen && terminalFocus"
+    },
+    {
+        "key": "ctrl+s 5",
+        "command": "workbench.action.terminal.focusAtIndex5",
+        "when": "neovim.mode !== 'insert' && !inQuickOpen && terminalFocus"
+    },
+    {
+        "key": "ctrl+s 6",
+        "command": "workbench.action.terminal.focusAtIndex6",
+        "when": "neovim.mode !== 'insert' && !inQuickOpen && terminalFocus"
+    },
+    {
+        "key": "ctrl+s 7",
+        "command": "workbench.action.terminal.focusAtIndex7",
+        "when": "neovim.mode !== 'insert' && !inQuickOpen && terminalFocus"
+    },
+    {
+        "key": "ctrl+s 8",
+        "command": "workbench.action.terminal.focusAtIndex8",
+        "when": "neovim.mode !== 'insert' && !inQuickOpen && terminalFocus"
+    },
+    {
+        "key": "ctrl+s 9",
+        "command": "workbench.action.terminal.focusAtIndex9",
+        "when": "neovim.mode !== 'insert' && !inQuickOpen && terminalFocus"
+    },
+    {
+        "key": "ctrl+s x x",
+        "command": "workbench.action.terminal.kill",
+        "when": "neovim.mode !== 'insert' && !inQuickOpen && terminalFocus"
+    },
+    {
+        "key": "ctrl+s m m",
+        "command": "workbench.action.toggleMaximizedPanel",
+        "when": "neovim.mode !== 'insert' && !inQuickOpen && terminalFocus"
+    },
+    {
+        "key": "cmd+k",
+        "command": "workbench.action.terminal.resizePaneUp",
+        "when": "neovim.mode !== 'insert' && !inQuickOpen && terminalFocus"
+    },
+    {
+        "key": "cmd+j",
+        "command": "workbench.action.terminal.resizePaneDown",
+        "when": "neovim.mode !== 'insert' && !inQuickOpen && terminalFocus"
+    },
+    {
+        "key": "cmd+h",
+        "command": "workbench.action.terminal.resizePaneLeft",
+        "when": "neovim.mode !== 'insert' && !inQuickOpen && terminalFocus"
+    },
+    {
+        "key": "cmd+l",
+        "command": "workbench.action.terminal.resizePaneRight",
+        "when": "neovim.mode !== 'insert' && !inQuickOpen && terminalFocus"
+    },
+    {
+        "key": "ctrl+s e e",
+        "command": "runCommands",
+        "args": {
+            "commands": [
+                {
+                    "command": "workbench.action.toggleMaximizedPanel"
+                },
+                {
+                    "command": "workbench.action.togglePanel"
+                },
+            ]
+        },
+        "when": "neovim.mode !== 'insert' && !inQuickOpen && terminalFocus"
+    },
+]

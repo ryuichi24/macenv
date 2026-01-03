@@ -30,6 +30,27 @@
     "command": "workbench.action.files.save",
     "when": "neovim.mode !== 'insert' && editorTextFocus"
   },
+  // ------------------------------ folding ------------------------------
+  {
+    "key": "shift+s",
+    "command": "editor.toggleFold",
+    "when": "neovim.mode !== 'insert' && editorTextFocus"
+  },
+  {
+    "key": "shift+f shift+f",
+    "command": "editor.foldAll",
+    "when": "neovim.mode !== 'insert' && editorTextFocus"
+  },
+  {
+    "key": "shift+f shift+f",
+    "command": "editor.foldAll",
+    "when": "neovim.mode !== 'insert' && editorTextFocus"
+  },
+  {
+    "key": "shift+f shift+f",
+    "command": "editor.foldAll",
+    "when": "neovim.mode !== 'insert' && editorTextFocus"
+  },
   // ------------------------------ editor pane mangement ------------------------------
   // split pane
   {
@@ -50,6 +71,12 @@
   {
     "key": "space w j",
     "command": "workbench.action.splitEditorDown",
+    "when": "neovim.mode !== 'insert' && editorTextFocus"
+  },
+  // close active pane
+  {
+    "key": "space w x",
+    "command": "workbench.action.closeEditorsInGroup",
     "when": "neovim.mode !== 'insert' && editorTextFocus"
   },
   // resize pane
@@ -98,7 +125,7 @@
   {
     "key": "space e e",
     "command": "workbench.explorer.fileView.focus",
-    "when": "neovim.mode !== 'insert' && editorTextFocus"
+    "when": "(neovim.mode !== 'insert' && editorTextFocus) || (neovim.mode !== 'insert' && !sideBarFocus && !inputFocus)"
   },
   {
     "key": "space e e",
@@ -117,32 +144,32 @@
     "command": "workbench.action.closeSidebar",
     "when": "neovim.mode !== 'insert' && sideBarFocus && !inputFocus"
   },
-  {
-    "key": "space x i",
-    "command": "workbench.extensions.installExtensions",
-    "when": "neovim.mode !== 'insert' && editorTextFocus && !inputFocus"
-  },
-  // ------------------------------ search ------------------------------ 
+  // {
+  //     "key": "space x i",
+  //     "command": "workbench.extensions.action.copyExtensionId",
+  //     "when": "neovim.mode !== 'insert' && !editorTextFocus && !inputFocus && view.workbench.views.extensions.marketplace.visible"
+  // },
+  // ------------------------------ search ------------------------------
   {
     "key": "space f s",
     "command": "workbench.action.findInFiles",
-    "when": "neovim.mode !== 'insert' && editorTextFocus"
+    "when": "(neovim.mode !== 'insert' && editorTextFocus) || (!editorTextFocus && !inputFocus)"
   },
   {
     "key": "ctrl+n",
-    // in Default Keybindings at 4028 
+    // in Default Keybindings at 4028
     "command": "search.action.focusSearchList",
     "when": "hasSearchResult && searchViewletFocus"
   },
   {
     "key": "space f f",
     "command": "workbench.action.quickOpen",
-    "when": "neovim.mode !== 'insert' && editorTextFocus"
+    "when": "(neovim.mode !== 'insert' && editorTextFocus) || (!editorTextFocus && !inputFocus)"
   },
   // ------------------------------ git ------------------------------
   {
     "key": "space l g",
-    "when": "neovim.mode !== 'insert' && editorTextFocus",
+    "when": "(neovim.mode !== 'insert' && editorTextFocus) || (!editorTextFocus && !inputFocus)",
     "command": "runCommands",
     "args": {
       "commands": [
@@ -168,22 +195,22 @@
   {
     "key": "space c o",
     "command": "workbench.action.chat.openagent",
-    "when": "neovim.mode !== 'insert' && editorTextFocus",
+    "when": "neovim.mode !== 'insert' && editorTextFocus"
   },
   {
     "key": "space c c",
     "command": "workbench.action.toggleAuxiliaryBar",
-    "when": "neovim.mode !== 'insert' && editorTextFocus",
+    "when": "neovim.mode !== 'insert' && editorTextFocus"
   },
   {
     "key": "space c s",
     "command": "workbench.action.chat.attachSelection",
-    "when": "neovim.mode !== 'insert' && editorTextFocus",
+    "when": "neovim.mode !== 'insert' && editorTextFocus"
   },
   {
     "key": "space c f",
     "command": "workbench.action.chat.attachContext",
-    "when": "neovim.mode !== 'insert' && editorTextFocus",
+    "when": "neovim.mode !== 'insert' && editorTextFocus"
   },
   // quit lazygit and close terminal panel
   {
@@ -205,7 +232,7 @@
         },
         {
           "command": "workbench.action.togglePanel"
-        },
+        }
       ]
     },
     "when": "terminalFocus && panelMaximized"
@@ -214,12 +241,12 @@
   {
     "key": "space t t",
     "command": "workbench.action.terminal.toggleTerminal",
-    "when": "neovim.mode !== 'insert' && editorTextFocus"
+    "when": "(neovim.mode !== 'insert' && editorTextFocus) || (!editorTextFocus && !inputFocus)"
   },
   {
     "key": "space t p",
     "command": "workbench.action.togglePanel",
-    "when": "neovim.mode !== 'insert' && editorTextFocus"
+    "when": "(neovim.mode !== 'insert' && editorTextFocus) || (!editorTextFocus && !inputFocus)"
   },
   {
     "key": "space t k",
@@ -234,33 +261,33 @@
   },
   // split terminal pane
   {
-    "key": "ctrl+s s s",
+    "key": "ctrl+s w l",
     "command": "workbench.action.terminal.split",
     "when": "terminalFocus"
   },
   {
-    "key": "ctrl+s u s",
+    "key": "ctrl+s w x",
     "command": "workbench.action.terminal.unsplit",
     "when": "terminalFocus"
   },
   // resize terminal pane
   {
-    "key": "cmd+h",
+    "key": "ctrl+alt+h",
     "command": "workbench.action.terminal.resizePaneLeft",
     "when": "terminalFocus"
   },
   {
-    "key": "cmd+l",
+    "key": "ctrl+alt+l",
     "command": "workbench.action.terminal.resizePaneRight",
     "when": "terminalFocus"
   },
   {
-    "key": "cmd+k",
+    "key": "ctrl+alt+k",
     "command": "workbench.action.terminal.resizePaneUp",
     "when": "terminalFocus"
   },
   {
-    "key": "cmd+j",
+    "key": "ctrl+alt+j",
     "command": "workbench.action.terminal.resizePaneDown",
     "when": "terminalFocus"
   },
@@ -320,7 +347,7 @@
     "command": "workbench.action.terminal.focusAtIndex9",
     "when": "terminalFocus"
   },
-  // 
+  //
   {
     "key": "ctrl+s m m",
     "command": "workbench.action.toggleMaximizedPanel",
@@ -337,34 +364,27 @@
     "key": "space a a",
     "command": "vscode-neovim.send",
     "when": "neovim.mode !== 'insert' && editorTextFocus",
-    "args": [
-      "ggVG"
-    ]
+    "args": ["ggVG"]
   },
   // workaround for vscode neovim not supporting ctrl+u/d in normal mode
   {
     "key": "ctrl+d",
     "command": "vscode-neovim.send",
     "when": "neovim.mode !== 'insert' && editorTextFocus",
-    "args": [
-      "<C-d>"
-    ]
+    "args": ["<C-d>"]
   },
   {
     "command": "vscode-neovim.send",
     "key": "ctrl+u",
     "when": "neovim.mode !== 'insert' && editorTextFocus",
-    "args": [
-      "<C-u>"
-    ]
+    "args": ["<C-u>"]
   },
   // paste in visual mode without yanking
   {
     "command": "vscode-neovim.send",
     "key": "p",
     "when": "neovim.mode === 'visual' && editorTextFocus",
-    "args": [
-      "\"_dP"
-    ]
-  },
+    "args": ["\"_dP"]
+  }
 ]
+

@@ -1,4 +1,5 @@
-{ // ------------------------------------ neovim ------------------------------------
+{
+  // ------------------------------------ neovim ------------------------------------
   "editor.lineNumbers": "relative",
   // https://github.com/vscode-neovim/vscode-neovim/issues/1051
   "extensions.experimental.affinity": {
@@ -8,8 +9,8 @@
   "vscode-neovim.neovimInitVimPaths.darwin": "/Users/ryu/.config/nvim/src/lua/vscode/init.lua",
   "vscode-neovim.compositeKeys": {
     "jj": {
-      "command": "vscode-neovim.escape",
-    },
+      "command": "vscode-neovim.escape"
+    }
   },
   "editor.formatOnSave": true,
   // https://github.com/vscode-neovim/vscode-neovim/issues/2099#issuecomment-2657736422
@@ -18,7 +19,7 @@
   },
   // -----------------------------------------------------------------------------
   "github.copilot.nextEditSuggestions.enabled": true,
-  // signals (bothering sounds)
+  // ------------------------------ signals (bothering sounds) -------------------------
   "accessibility.signals.chatRequestSent": {
     "sound": "off",
     "announcement": "off"
@@ -83,7 +84,7 @@
     "sound": "off",
     "announcement": "off"
   },
-  // editor tab settings
+  // ------------------------- editor tab settings -------------------------
   "editor.minimap.enabled": false,
   "workbench.editor.enablePreviewFromCodeNavigation": true,
   "workbench.editor.enablePreviewFromQuickOpen": true,
@@ -92,5 +93,15 @@
   "workbench.editor.limit.value": 1,
   "workbench.editor.mouseBackForwardToNavigate": false,
   "workbench.editor.openPositioning": "left",
-  "workbench.editor.splitInGroupLayout": "vertical"
+  "workbench.editor.splitInGroupLayout": "vertical",
+  // ------------------------- editor -------------------------
+  "editor.showFoldingControls": "always",
+  "editor.folding": true,
+  "editor.foldingStrategy": "indentation",
+  // ------------------------- terminal -------------------------
+  "workbench.panel.defaultLocation": "bottom",
+  // ------------------------- theme -------------------------
+  "workbench.iconTheme": "material-icon-theme",
+  "workbench.colorTheme": "Tokyo Night Storm"
 }
+

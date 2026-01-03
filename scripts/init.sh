@@ -61,6 +61,7 @@ CONFIG_DIR="$HOME_DIR/.config"
 SOURCE_FILES_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)/files"
 SOURCE_CONFIG_DIR="$SOURCE_FILES_DIR/.config"
 SOURCE_DOTFILES_DIR="$SOURCE_FILES_DIR/dotfiles"
+SOURCE_APP_CONFIG_DIR="$SOURCE_FILES_DIR/app-configs"
 
 
 # =============================================
@@ -134,6 +135,28 @@ for config in "$SOURCE_CONFIG_DIR"/*; do
 
     symlink_dir "$config" "$target_config"
     echo "Created symlink for $config"
+done
+
+
+# Create symlinks for each VSCode config JSON file
+VSCODE_APP_CONFIG_DIR="$SOURCE_APP_CONFIG_DIR/vscode"
+# $HOME/Libary/Application Support/Code/User/<JOSN file>
+VSCODE_USER_DIR="$HOME_DIR/Library/Application Support/Code/User"
+for vscode_config in "$VSCODE_APP_CONFIG_DIR"/*.json; do
+    # Skip current and parent directory entries
+    if [ "$(basename "$vscode_config")" == "." ] || [ "$(basename "$vscode_config")" == ".." ]; then
+        continue
+    fi
+
+    # check if the same symlink already exists
+    target_vscode_config="$VSCODE_USER_DIR/$(basename "$vscode_config")"
+    if [ -L "$target_vscode_config" ] && [ "$(readlink "$target_vscode_config")" == "$vscode_config" ]; then
+        echo "Symlink already exists for $vscode_config"
+        continue
+    fi
+
+    sysmlink_file "$vscode_config" "$target_vscode_config"
+    echo "Created symlink for $vscode_config"
 done
 
 shopt -u nullglob dotglob # Enable nullglob and dotglob to include hidden files

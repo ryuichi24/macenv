@@ -307,3 +307,6 @@ run = ["move-node-to-workspace Y"]
 if.app-id = "com.obsproject.obs-studio"
 run = ["move-node-to-workspace O"]
 
+[[on-window-detected]]
+if.app-id = "com.apple.ActivityMonitor"
+run = ["move-node-to-workspace I"]

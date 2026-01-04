@@ -26,7 +26,7 @@ BREW_CLIS=(
     "lua"      # Lua programming language
     # "lua-language-server"   # Language server for Lua
     "kanata"    # keymap remapper
-    "ollama"  # AI models tool
+    "ollama"  # AI models tool https://www.reddit.com/r/ollama/comments/1lx45fg/ollama_auto_start_despite_removed_from_open_at/
     # "yt-dlp"  # Media downloader
     "tree"    # Directory listing command
     "ripgrep" # Fast text search tool

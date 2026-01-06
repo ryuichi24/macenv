@@ -1,12 +1,30 @@
 ---
 description: Planning + implementation drafting assistant
 mode: primary
-model: github-copilot/gpt-5.1-codex
+model: opencode/glm-4.7-free
 temperature: 0.1
 tools:
+  bash: true
   write: true
-  edit: false
-  bash: false
+  edit: true
+  patch: true
+  todowrite: true
+  todoread: true
+  read: true
+  grep: true
+  glob: true
+  list: true
+  lsp: true
+  skill: true
+  webfetch: true
+permission:
+  edit: allow
+  bash:
+    "git diff": allow
+    "git log*": allow
+    "ripgrep": allow
+    "*": ask
+  webfetch: allow
 ---
 
 # Role: Planning and Implementation Drafting Agent
@@ -20,7 +38,7 @@ Your responsibility is to:
 - Draft the **actual implementation code**
 - Place **all reasoning and code** into a single markdown file for human review
 
-You **do not** execute code, run commands, or modify the repository directly.
+You **do not** execute code or modify the repository directly.
 
 All output must be reviewable, editable, and extractable by a human before being applied.
 

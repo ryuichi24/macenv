@@ -9,6 +9,7 @@ alias cdc='cd "$(pbpaste)"' # cd into path copied to clipboard
 # neovim
 alias vi='NVIM_APPNAME=nvim/src nvim' # https://wiki.archlinux.org/title/Neovim
 alias vim='NVIM_APPNAME=nvim/src nvim'
+alias nvim='NVIM_APPNAME=nvim/src nvim'
 
 # tmux
 alias tmux='tmux -f $HOME/.config/tmux/tmux.conf' # use custom config file ans start tmux
@@ -33,5 +34,7 @@ alias appd="cd $HOME/Library/Application\ Support/"
 # quick edit
 alias ee='cd $HOME/Dev/personal/projects/macenv && vi .'
 alias nn='cd $HOME/Dev/personal/projects/macenv/files/.config/nvim && vi .'
-alias tt='cd $HOME/Dev/personal/tmp/todos && vi .'
+alias pp='cd $HOME/Dev/personal/projects && vi .'
+alias mm='cd $HOME/Dev/personal/projects/my-knowledge-base && vi .'
+alias dd='cd "$HOME/dev/personal/projects/my-knowledge-base" && file="./daily/$(date +%Y-%m-%d).md" && [ ! -f "$file" ] && touch "$file"; vi "$file"'
 

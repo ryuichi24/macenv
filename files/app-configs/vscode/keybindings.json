@@ -125,7 +125,7 @@
     {
         "key": "space e e",
         "command": "workbench.action.closeSidebar",
-        "when": "explorerViewletVisible && ((neovim.mode != 'insert' && editorTextFocus) || !inputFocus && !editorTextFocus)",
+        "when": "explorerViewletVisible && ((neovim.mode != 'insert' && editorTextFocus) || !inputFocus)",
     },
     // ------------------------------ search ------------------------------
     {

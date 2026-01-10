@@ -182,12 +182,12 @@
         "when": "neovim.mode !== 'insert' && editorTextFocus"
     },
     {
-        "key": "shift+f shift+f",
+        "key": "shift+q shift+q",
         "command": "editor.foldAll",
         "when": "neovim.mode !== 'insert' && editorTextFocus"
     },
     {
-        "key": "shift+f shift+d",
+        "key": "shift+q shift+d",
         "command": "editor.unfoldAll",
         "when": "neovim.mode !== 'insert' && editorTextFocus"
     },

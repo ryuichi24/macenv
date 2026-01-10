@@ -6,17 +6,30 @@
             "command": "vscode-neovim.escape"
         }
     },
-    // https://github.com/vscode-neovim/vscode-neovim/issues/2099#issuecomment-2657736422
     "workbench.view.showQuietly": {
         "workbench.panel.output": true
     },
     "editor.lineNumbers": "relative",
     "editor.formatOnSave": true,
-    // https://github.com/vscode-neovim/vscode-neovim/issues/1051
     "extensions.experimental.affinity": {
         "asvetliakov.vscode-neovim": 1
     },
     "editor.accessibilitySupport": "off",
+    // ------------------------- folding -------------------------
+    "editor.folding": true,
+    "editor.showFoldingControls": "always",
+    // ------------------------- editor settings -------------------------
+    "editor.minimap.enabled": false,
+    "workbench.editor.limit.enabled": true,
+    "workbench.editor.limit.perEditorGroup": true,
+    "workbench.editor.limit.value": 1,
+    // ------------------------- theme -------------------------
+    "workbench.iconTheme": "material-icon-theme",
+    "workbench.colorTheme": "Tokyo Night Storm",
+    // ------------------------- GitHub Copilot -------------------------
+    "editor.inlineSuggest.edits.renderSideBySide": "never",
+    "editor.inlineSuggest.edits.allowCodeShifting": "never",
+    "github.copilot.nextEditSuggestions.fixes": false,
     // ------------------------------ signals (bothering sounds) -------------------------
     "accessibility.signals.chatRequestSent": {
         "sound": "off",
@@ -73,7 +86,8 @@
         "sound": "off"
     },
     "accessibility.signals.lineHasFoldedArea": {
-        "sound": "off"
+        "sound": "off",
+        "announcement": "off"
     },
     "accessibility.signals.lineHasError": {
         "sound": "off"
@@ -82,25 +96,56 @@
         "sound": "off",
         "announcement": "off"
     },
-    // ------------------------- editor tab settings -------------------------
-    "editor.minimap.enabled": false,
-    "workbench.editor.limit.enabled": true,
-    "workbench.editor.limit.perEditorGroup": true,
-    "workbench.editor.limit.value": 1,
-    // "workbench.editor.enablePreviewFromCodeNavigation": true,
-    // "workbench.editor.enablePreviewFromQuickOpen": true,
-    // "workbench.editor.openPositioning": "left",
-    // "workbench.editor.splitInGroupLayout": "vertical",
-    // ------------------------- editor -------------------------
-    "editor.folding": true,
-    "editor.showFoldingControls": "always",
-    // ------------------------- terminal -------------------------
-    "workbench.panel.defaultLocation": "bottom",
-    // ------------------------- theme -------------------------
-    "workbench.iconTheme": "material-icon-theme",
-    "workbench.colorTheme": "Tokyo Night Storm",
-    // ------------------------- GitHub Copilot -------------------------
-    "editor.inlineSuggest.edits.renderSideBySide": "never",
-    "editor.inlineSuggest.edits.allowCodeShifting": "never",
-    "github.copilot.nextEditSuggestions.fixes": false,
+    "accessibility.signals.diffLineInserted": {
+        "sound": "off"
+    },
+    "accessibility.signals.diffLineModified": {
+        "sound": "off"
+    },
+    "accessibility.signals.editsKept": {
+        "sound": "off",
+        "announcement": "off"
+    },
+    "accessibility.signals.notebookCellCompleted": {
+        "sound": "off",
+        "announcement": "off"
+    },
+    "accessibility.signals.notebookCellFailed": {
+        "sound": "off",
+        "announcement": "off"
+    },
+    "accessibility.signals.onDebugBreak": {
+        "sound": "off",
+        "announcement": "off"
+    },
+    "accessibility.signals.taskCompleted": {
+        "sound": "off",
+        "announcement": "off"
+    },
+    "accessibility.signals.taskFailed": {
+        "sound": "off",
+        "announcement": "off"
+    },
+    "accessibility.signals.terminalCommandFailed": {
+        "sound": "off",
+        "announcement": "off"
+    },
+    "accessibility.signals.terminalBell": {
+        "sound": "off",
+        "announcement": "off"
+    },
+    "accessibility.signals.terminalCommandSucceeded": {
+        "sound": "off",
+        "announcement": "off"
+    },
+    "accessibility.signals.terminalQuickFix": {
+        "sound": "off",
+        "announcement": "off"
+    },
+    "accessibility.signals.voiceRecordingStopped": {
+        "sound": "off"
+    },
+    "accessibility.signals.chatEditModifiedFile": {
+        "sound": "off"
+    },
 }

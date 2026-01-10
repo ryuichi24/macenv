@@ -125,7 +125,7 @@
     {
         "key": "space e e",
         "command": "workbench.action.closeSidebar",
-        "when": "sideBarVisible && (neovim.mode != 'insert' && editorTextFocus) || !inputFocus",
+        "when": "explorerViewletVisible && ((vim.mode != 'insert' && editorTextFocus) || !inputFocus)",
     },
     // ------------------------------ search ------------------------------
     {

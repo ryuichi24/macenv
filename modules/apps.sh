@@ -78,6 +78,7 @@ CASK_APPS=(
     # "alt-tab"            # Window switcher
     "cryptomator"        # Encryption tool
     "obs"                # Streaming software
+    "audacity"           # Audio editor/recorder
     "blackhole-2ch"      # Audio driver
     "blackhole-16ch"     # Audio driver
     # "figma"              # Design tool
@@ -110,7 +111,7 @@ MAS_APPS=(
     "LINE:539883307"
     # "Presentify:1507246666"
     "Urban_VPN_Desktop:1517772049"
-    # "Xcode:497799835"
+    "Xcode:497799835"
     "LadioCast:411213048"
 )
 

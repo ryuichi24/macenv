@@ -307,6 +307,10 @@ if.app-id = "com.obsproject.obs-studio"
 run = ["move-node-to-workspace O"]
 
 [[on-window-detected]]
+if.app-id = "org.audacityteam.audacity"
+run = ["move-node-to-workspace O"]
+
+[[on-window-detected]]
 if.app-id = "com.apple.ActivityMonitor"
 run = ["move-node-to-workspace I"]
 
@@ -316,4 +320,9 @@ run = ["layout tiling", "move-node-to-workspace V"]
 
 [[on-window-detected]]
 if.app-id = "com.apple.finder"
-run = ["layout tiling", "move-node-to-workspace G"]
+run = ["layout tiling", "move-node-to-workspace g"]
+
+[[on-window-detected]]
+if.app-id = "com.microsoft.rdc.macos"
+run = ["layout tiling", "move-node-to-workspace 9"]
+

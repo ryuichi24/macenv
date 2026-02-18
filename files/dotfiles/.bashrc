@@ -1,5 +1,5 @@
 # bash
-alias ss='source ~/.bashrc && echo "Reloaded .bashrc successfully!"'
+alias ss='source ~/.bash_profile && echo "Reloaded .bash_profile & .bashrc successfully!"'
 alias ls='ls -larth --color=auto'
 alias ..="cd .. && ls"
 alias cc="clear"
@@ -7,9 +7,10 @@ alias uuid='uuidgen | tr "[:upper:]" "[:lower:]" | tr -d "\n" | pbcopy && echo "
 alias cdc='cd "$(pbpaste)"' # cd into path copied to clipboard
 
 # neovim
-alias vi='NVIM_APPNAME=nvim/src nvim' # https://wiki.archlinux.org/title/Neovim
-alias vim='NVIM_APPNAME=nvim/src nvim'
-alias nvim='NVIM_APPNAME=nvim/src nvim'
+NVIM_DIR="nvim"
+alias vi='NVIM_APPNAME=$NVIM_DIR nvim' # https://wiki.archlinux.org/title/Neovim
+alias vim='NVIM_APPNAME=$NVIM_DIR nvim'
+alias nvim='NVIM_APPNAME=$NVIM_DIR nvim'
 
 # tmux
 alias tmux='tmux -f $HOME/.config/tmux/tmux.conf' # use custom config file ans start tmux
@@ -37,4 +38,28 @@ alias nn='cd $HOME/Dev/personal/projects/macenv/files/.config/nvim && vi .'
 alias pp='cd $HOME/Dev/personal/projects && vi .'
 alias mm='cd $HOME/Dev/personal/projects/my-knowledge-base && vi .'
 alias dd='cd "$HOME/dev/personal/projects/my-knowledge-base" && file="./daily/$(date +%Y-%m-%d).md" && [ ! -f "$file" ] && touch "$file"; vi "$file"'
+
+# quick open
+alias des='cd $HOME/Desktop && y'
+alias dev='cd $HOME/dev && y'
+alias pro='cd $HOME/dev/personal/projects && y'
+
+
+# opencode
+export PATH=/Users/ryu/.opencode/bin:$PATH
+
+# yazy
+function y() {
+	local tmp="$(mktemp -t "yazi-cwd.XXXXXX")" cwd
+	command yazi "$@" --cwd-file="$tmp"
+	IFS= read -r -d '' cwd < "$tmp"
+	[ "$cwd" != "$PWD" ] && [ -d "$cwd" ] && builtin cd -- "$cwd"
+	rm -f -- "$tmp"
+}
+
+
+# uncommited bachrc for private use
+if [ -r ~/.pbashrc ]; then
+    . ~/.pbashrc.
+fi
 

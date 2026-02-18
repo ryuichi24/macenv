@@ -1,7 +1,12 @@
+#
+export EDITOR="nvim"
 # https://discussions.apple.com/thread/255287296?utm_source=chatgpt.com&sortBy=rank
 # https://www.theverge.com/2019/6/4/18651872/apple-macos-catalina-zsh-bash-shell-replacement-features
 # https://discussions.apple.com/thread/250729585?sortBy=rank
 export BASH_SILENCE_DEPRECATION_WARNING=1
+
+# It does not have to be set here but in case you want to chage it source:https://specifications.freedesktop.org/basedir/latest/
+export XDG_CONFIG_HOME="$HOME/.config"
 
 # ~/.bash_profile: executed by bash(1) for non-login shells.
 if [ -r ~/.bashrc ]; then
@@ -10,7 +15,7 @@ fi
 
 # homebrew
 eval "$(/opt/homebrew/bin/brew shellenv)"
-
+export HOMEBREW_NO_AUTO_UPDATE=1
 # nvm
 export NVM_DIR=~/.nvm
 source $(brew --prefix nvm)/nvm.sh
@@ -35,7 +40,7 @@ precmd() {
 # This is to allow using ctrl-s in vim or tmux
 stty -ixon
 
-
 # Added by OrbStack: command-line tools and integration
 # This won't be added again if you remove it.
 source ~/.orbstack/shell/init.bash 2>/dev/null || :
+

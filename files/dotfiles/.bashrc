@@ -43,6 +43,7 @@ alias dd='cd "$HOME/dev/personal/projects/my-knowledge-base" && file="./daily/$(
 alias des='cd $HOME/Desktop && y'
 alias dev='cd $HOME/dev && y'
 alias pro='cd $HOME/dev/personal/projects && y'
+alias tmp='cd $HOME/dev/personal/tmp && y'
 
 
 # opencode

@@ -1,0 +1,52 @@
+# to reload config `neru config reload`
+
+# https://github.com/y3owk1n/neru/blob/main/docs/CONFIGURATION.md
+[hotkeys]
+"Ctrl+Space" = "recursive_grid --action left_click"
+"Ctrl+m" = "scroll"
+
+[action.key_bindings]
+left_click = "Return"
+right_click = "Cmd+L"
+middle_click = "Shift+M"
+mouse_down = "Shift+D"
+mouse_up = "Shift+U"
+move_mouse_up = "Up"
+move_mouse_down = "Down"
+move_mouse_left = "Left"
+move_mouse_right = "Right"
+
+[scroll]
+scroll_step = 50
+scroll_step_half = 500
+scroll_step_full = 1000000
+stay_active_in_background = true
+
+[scroll.key_bindings]
+scroll_up = ["k"]
+scroll_down = ["j"]
+scroll_left = ["h"]
+scroll_right = ["l"]
+go_top = ["gg"]
+go_bottom = ["Shift+G"]
+page_up = ["u"]
+page_down = ["d"]
+
+[smooth_cursor]
+move_mouse_enabled = true  # default (instant)
+steps = 10
+delay = 10# # Smooth but slower
+
+[recursive_grid.ui]
+show_next_level_keys = true
+font_size = 20
+sub_key_preview = true
+sub_key_preview_font_size = 12
+
+[recursive_grid]
+keys = "uijk"
+
+[general]
+excluded_apps = [
+    "net.kovidgoyal.kitty",
+]

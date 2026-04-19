@@ -67,7 +67,7 @@
 
     ;; Layer Keys
     lmet (tap-hold $tap-time $hold-time bspc @l_held_bracket)
-    rmet (tap-hold $tap-time $hold-time rmet @l_held_nav)
+    rmet (tap-hold $tap-time $hold-time rmet rmet)
     spc (tap-hold $tap-time $hold-time spc @l_held_symbol)
     ret(tap-hold $tap-time $hold-time ret @l_held_num)
 
@@ -144,10 +144,10 @@
 (deflayer base 
     esc  🔅    🔆    @mc   @sls  @dtn  @dnd  ◀◀    ▶⏸    ▶▶    🔇    🔉    🔊
     ` 1 2 3  4 5 6 7  8 9 0 -  = bspc
-    tab q w e  r t y u  i o p [  ] \
-    XX @a s d  f g h j  k l @ret ' ret
+    XX q w e  r t y u  i o p XX  XX XX
+    XX @a s d  f g h j  k l @ret XX XX
     lsft @z x c  v b n m  , . @/ @rsfttapdance
-    fn lalt lmet @lmet @spc @rmet ralt left  down up right
+    XX XX lalt @lmet @spc @rmet ralt left  down up right
 )
 
 (deflayer normal
@@ -192,7 +192,7 @@
     XX XX XX XX  XX XX XX XX  XX XX XX XX  XX XX
     XX ' @dq ` - @+ 7 8 9 XX XX XX  XX XX
     XX @@ @# @$  @~ \ 4 5 6 XX XX XX  XX
-    lsft @% @*lalt @^  @& @! 1 2 3 XX XX XX
+    lsft @% @*lalt @^  @& @! XX 1 2 3 XX XX
     XX lalt lmet lmet  XX 0 XX XX  XX XX XX
 )
 
@@ -200,8 +200,8 @@
 (deflayer bracket
     XX XX XX XX  XX XX XX XX  XX XX XX XX  XX
     XX XX XX XX  XX XX XX XX  XX XX XX XX  XX XX
-    XX tab XX esc  M-r M-t = @lp @rp - + XX  XX XX
-    XX M-a M-s XX  M-f XX @: @{  @} @| XX XX  XX
+    XX tab M-w esc  M-r M-t = @lp @rp - + XX  XX XX
+    XX M-a M-s M-d  M-f XX @: @{  @} @| XX XX  XX
     XX M-z M-x M-c  M-v XX ; [ ] @< @> XX
     XX XX XX XX  M-spc XX XX XX  XX XX XX
 )

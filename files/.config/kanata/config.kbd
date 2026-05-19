@@ -201,9 +201,9 @@
     XX XX XX XX  XX XX XX XX  XX XX XX XX  XX
     XX XX XX XX  XX XX XX XX  XX XX XX XX  XX XX
     XX tab M-w esc  M-r M-t = @lp @rp - + XX  XX XX
-    XX M-a M-s M-d  M-f XX @: @{  @} @| XX XX  XX
-    XX M-z M-x M-c  M-v XX ; [ ] @< @> XX
-    XX XX XX XX  M-spc XX XX XX  XX XX XX
+    XX M-a M-s M-d  M-f Lang1 @: @{  @} @| XX XX  XX
+    XX M-z M-x M-c  M-v Lang2 ; [ ] @< @> XX
+    XX XX XX XX  M-spc XX @_ XX XX XX XX
 )
 
 (deflayer nav

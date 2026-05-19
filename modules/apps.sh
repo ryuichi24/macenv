@@ -7,6 +7,8 @@ BREW_TAPS=(
     # "lyraphase/pcloud" # pCloud Drive support
     # https://github.com/Homebrew/homebrew-cask-fonts?utm_source=chatgpt.com
     # "homebrew/cask-fonts"
+    "FelixKratz/formulae"
+	"y3owk1n/tap"
 )
 
 # =============================================
@@ -20,11 +22,9 @@ BREW_CLIS=(
     "go"      # Go programming language
     "gcc"     # GNU Compiler Collection
     "cmake"   # Build system
-    # "ffmpeg"  # Multimedia framework
+    "ffmpeg"  # Multimedia framework
     "neovim"  # Text editor
     "font-hack-nerd-font" # icons for terminal and useful articale: https://osatoh.com/entry/2023/09/19/200807
-    "lua"      # Lua programming language
-    # "lua-language-server"   # Language server for Lua
     "kanata"    # keymap remapper
     "ollama"  # AI models tool https://www.reddit.com/r/ollama/comments/1lx45fg/ollama_auto_start_despite_removed_from_open_at/
     # "yt-dlp"  # Media downloader
@@ -37,26 +37,29 @@ BREW_CLIS=(
     # "diff-so-fancy" # Improved diff output
     # "imagemagick"   # Image manipulation tools
     # "xtool-org/tap/xtool"  # XTool utilities
-    "koekeishiya/formulae/skhd"   # Hotkey daemon for macOS must to start by `skhd --start-service`
+    # "koekeishiya/formulae/skhd"   # Hotkey daemon for macOS must to start by `skhd --start-service`
     # dev dependencies
     "pkg-config" # manages compile and link flags for libraries
     "zeromq" # ZeroMQ messaging library
     # "koekeishiya/formulae/yabai" # Tiling window manager for macOS
-    "nikitabobko/tap/aerospace" # native Tiling window manager for macOS
     "tmux"    # Terminal
-    "sst/tap/opencode" # AI Model CLI Client
-    "uv" # python manager
+    # "sst/tap/opencode" # AI Model CLI Client
+    # "uv" # python manager
+	"y3owk1n/tap/neru"
 )
 
 # =============================================
 # GUI Applications (Casks)
 # =============================================
 CASK_APPS=(
-    "iterm2"              # Terminal emulator
-    "ghostty"                # Terminal emulator
-    "claude"               # AI assistant
+    "kitty"                # Terminal emulator
+    "nikitabobko/tap/aerospace" # native Tiling window manager for macOS
+    # "iterm2"              # Terminal emulator
+    # "ghostty"                # Terminal emulator
+    "sketchybar"           # Status bar customization
+    # "claude"               # AI assistant
     # "windsurf"             # Network utility
-    "cursor"               # Code editor
+    # "cursor"               # Code editor
     "visual-studio-code" # Code editor
     "brave-browser"      # Web browser
     # "google-chrome"      # Web browser
@@ -79,8 +82,8 @@ CASK_APPS=(
     "cryptomator"        # Encryption tool
     "obs"                # Streaming software
     "audacity"           # Audio editor/recorder
-    "blackhole-2ch"      # Audio driver
-    "blackhole-16ch"     # Audio driver
+    # "blackhole-2ch"      # Audio driver
+    # "blackhole-16ch"     # Audio driver
     # "figma"              # Design tool
     # "obsidian"             # Note-taking app
     # "pcloud-drive"         # Cloud storage
@@ -102,6 +105,7 @@ CASK_APPS=(
     "shottr"                # Screenshot tool
     "keycastr"              # Keystroke visualizer
     "jordanbaird-ice"        # System Tray manger
+	"db-browser-for-sqlite" # SQLite database browser
 )
 
 # =============================================
@@ -112,6 +116,6 @@ MAS_APPS=(
     # "Presentify:1507246666"
     "Urban_VPN_Desktop:1517772049"
     "Xcode:497799835"
-    "LadioCast:411213048"
+    # "LadioCast:411213048"
 )
 

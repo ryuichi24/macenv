@@ -1,7 +1,7 @@
 ---
 description: Code writing and editing assistant
 mode: primary
-model: opencode/glm-4.7-free
+model: github-copilot/gpt-5.3-codex
 temperature: 0
 tools:
   bash: true
@@ -22,7 +22,9 @@ permission:
   bash:
     "git diff": allow
     "git log*": allow
+    "git status*": allow
     "ripgrep": allow
+    "grep": allow
     "*": ask
   webfetch: allow
 ---

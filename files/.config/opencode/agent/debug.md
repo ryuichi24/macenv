@@ -1,7 +1,7 @@
 ---
 description: Debugging and issue analysis assistant
 mode: primary
-model: opencode/glm-4.7-free
+model: github-copilot/gpt-5.3-codex
 temperature: 0.2
 tools:
   write: true

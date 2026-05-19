@@ -35,12 +35,12 @@
             "\"_dP"
         ]
     },
-    // move lines up and down in visual mode
     {
         "key": "ctrl+k",
         "command": "editor.action.moveLinesUpAction",
         "when": "neovim.mode === 'visual' && editorTextFocus && !editorReadonly"
     },
+    // move lines up and down in visual mode
     {
         "key": "ctrl-j",
         "command": "editor.action.moveLinesDownAction",
@@ -120,18 +120,18 @@
     {
         "key": "space e e",
         "command": "workbench.files.action.focusFilesExplorer",
-        "when": "(neovim.mode != 'insert' && editorTextFocus) || !inputFocus",
+        "when": "(neovim.mode != 'insert' && editorTextFocus) || !inputFocus"
     },
     {
         "key": "space e e",
         "command": "workbench.action.closeSidebar",
-        "when": "explorerViewletVisible && ((neovim.mode != 'insert' && editorTextFocus) || !inputFocus)",
+        "when": "explorerViewletVisible && ((neovim.mode != 'insert' && editorTextFocus) || !inputFocus)"
     },
     // ------------------------------ search ------------------------------
     {
         "key": "space f s",
         "command": "workbench.action.findInFiles",
-        "when": "(neovim.mode != 'insert' && editorTextFocus) || !inputFocus",
+        "when": "(neovim.mode != 'insert' && editorTextFocus) || !inputFocus"
     },
     {
         "key": "ctrl+n",
@@ -142,7 +142,7 @@
     {
         "key": "space f f",
         "command": "workbench.action.quickOpen",
-        "when": "(neovim.mode != 'insert' && editorTextFocus) || !inputFocus",
+        "when": "(neovim.mode != 'insert' && editorTextFocus) || !inputFocus"
     },
     // ------------------------------ editor actions ------------------------------
     {
@@ -173,22 +173,6 @@
     {
         "key": "space s",
         "command": "workbench.action.files.save",
-        "when": "neovim.mode !== 'insert' && editorTextFocus"
-    },
-    // ------------------------------ folding ------------------------------
-    {
-        "key": "shift+s",
-        "command": "editor.toggleFold",
-        "when": "neovim.mode !== 'insert' && editorTextFocus"
-    },
-    {
-        "key": "shift+q shift+q",
-        "command": "editor.foldAll",
-        "when": "neovim.mode !== 'insert' && editorTextFocus"
-    },
-    {
-        "key": "shift+q shift+d",
-        "command": "editor.unfoldAll",
         "when": "neovim.mode !== 'insert' && editorTextFocus"
     },
     // ------------------------------ terminal ------------------------------
@@ -386,13 +370,8 @@
         "when": "(neovim.mode != 'insert' && editorTextFocus) || !inputFocus"
     },
     {
-        "key": "space c s",
-        "command": "workbench.action.chat.attachSelection",
-        "when": "(neovim.mode != 'insert' && editorTextFocus) || !inputFocus"
-    },
-    {
         "key": "space c f",
         "command": "workbench.action.chat.attachContext",
         "when": "(neovim.mode != 'insert' && editorTextFocus) || !inputFocus"
-    },
+    }
 ]

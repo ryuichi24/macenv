@@ -5,6 +5,7 @@ export EDITOR="nvim"
 # https://discussions.apple.com/thread/250729585?sortBy=rank
 export BASH_SILENCE_DEPRECATION_WARNING=1
 
+export PATH="~//.local/bin:$PATH"
 # It does not have to be set here but in case you want to chage it source:https://specifications.freedesktop.org/basedir/latest/
 export XDG_CONFIG_HOME="$HOME/.config"
 
@@ -44,3 +45,4 @@ stty -ixon
 # This won't be added again if you remove it.
 source ~/.orbstack/shell/init.bash 2>/dev/null || :
 
+export PATH="$PATH:$(go env GOPATH)/bin"

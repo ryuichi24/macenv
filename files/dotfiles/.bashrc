@@ -4,13 +4,18 @@ alias ls='ls -larth --color=auto'
 alias ..="cd .. && ls"
 alias cc="clear"
 alias uuid='uuidgen | tr "[:upper:]" "[:lower:]" | tr -d "\n" | pbcopy && echo "UUID copied to clipboard"'
+alias cpwd='pwd | pbcopy && echo "Current directory path copied to clipboard"'
 alias cdc='cd "$(pbpaste)"' # cd into path copied to clipboard
 
-# neovim
+# git
+
+# nvim # https://wiki.archlinux.org/title/neovim
 NVIM_DIR="nvim"
-alias vi='NVIM_APPNAME=$NVIM_DIR nvim' # https://wiki.archlinux.org/title/Neovim
+alias vi='NVIM_APPNAME=$NVIM_DIR nvim' 
 alias vim='NVIM_APPNAME=$NVIM_DIR nvim'
 alias nvim='NVIM_APPNAME=$NVIM_DIR nvim'
+
+alias yy='NVIM_APPNAME=nvimy /opt/homebrew/bin/nvim'
 
 # tmux
 alias tmux='tmux -f $HOME/.config/tmux/tmux.conf' # use custom config file ans start tmux
@@ -61,6 +66,23 @@ function y() {
 
 # uncommited bachrc for private use
 if [ -r ~/.pbashrc ]; then
-    . ~/.pbashrc.
+    . ~/.pbashrc
 fi
 
+
+# Process Manager
+alias pp="rip -f"
+
+
+ffn() {
+  local target_dir="${1:-.}"
+  local replacement="${2:-_}"
+
+  find "$target_dir" -depth -name "* *" | while IFS= read -r path; do
+    local new_path="${path// /$replacement}"
+
+    if [[ "$path" != "$new_path" ]]; then
+      mv -i -- "$path" "$new_path"
+    fi
+  done
+}

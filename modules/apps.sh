@@ -26,7 +26,7 @@ BREW_CLIS=(
     "neovim"  # Text editor
     "font-hack-nerd-font" # icons for terminal and useful articale: https://osatoh.com/entry/2023/09/19/200807
     "kanata"    # keymap remapper
-    "ollama"  # AI models tool https://www.reddit.com/r/ollama/comments/1lx45fg/ollama_auto_start_despite_removed_from_open_at/
+    # "ollama"  # AI models tool https://www.reddit.com/r/ollama/comments/1lx45fg/ollama_auto_start_despite_removed_from_open_at/
     # "yt-dlp"  # Media downloader
     "tree"    # Directory listing command
     "ripgrep" # Fast text search tool
@@ -56,7 +56,7 @@ CASK_APPS=(
     "nikitabobko/tap/aerospace" # native Tiling window manager for macOS
     # "iterm2"              # Terminal emulator
     # "ghostty"                # Terminal emulator
-    "sketchybar"           # Status bar customization
+    # "sketchybar"           # Status bar customization
     # "claude"               # AI assistant
     # "windsurf"             # Network utility
     # "cursor"               # Code editor
@@ -105,7 +105,7 @@ CASK_APPS=(
     "shottr"                # Screenshot tool
     "keycastr"              # Keystroke visualizer
     "jordanbaird-ice"        # System Tray manger
-	"db-browser-for-sqlite" # SQLite database browser
+	# "db-browser-for-sqlite" # SQLite database browser
 )
 
 # =============================================
@@ -114,8 +114,8 @@ CASK_APPS=(
 MAS_APPS=(
     "LINE:539883307"
     # "Presentify:1507246666"
-    "Urban_VPN_Desktop:1517772049"
-    "Xcode:497799835"
+    # "Urban_VPN_Desktop:1517772049"
+    # "Xcode:497799835"
     # "LadioCast:411213048"
 )
 

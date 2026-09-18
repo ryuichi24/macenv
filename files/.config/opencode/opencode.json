@@ -1,13 +1,13 @@
 {
   "$schema": "https://opencode.ai/config.json",
-  "model": "github-copilot/claude-opus-4.6",
+  "model": "opencode/deepseek-v4-flash-free",
   "default_agent": "planning",
   "agent": {
     "build": {
-      "disable": true
+      "disable": false
     },
     "plan": {
-      "disable": true
+      "disable": false
     }
   },
   "provider": {

@@ -15,6 +15,7 @@ BREW_TAPS=(
 # Command Line Tools
 # =============================================
 BREW_CLIS=(
+	"bash",
     "mas"     # Mac App Store command line interface
     "nvm"     # Node Version Manager
     # "rbenv"   # Ruby Environment

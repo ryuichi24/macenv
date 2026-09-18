@@ -46,3 +46,8 @@ stty -ixon
 source ~/.orbstack/shell/init.bash 2>/dev/null || :
 
 export PATH="$PATH:$(go env GOPATH)/bin"
+
+# SDKMAN!
+export SDKMAN_DIR="$HOME/.sdkman"
+[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
+

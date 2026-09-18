@@ -15,7 +15,7 @@ alias vi='NVIM_APPNAME=$NVIM_DIR nvim'
 alias vim='NVIM_APPNAME=$NVIM_DIR nvim'
 alias nvim='NVIM_APPNAME=$NVIM_DIR nvim'
 
-alias yy='NVIM_APPNAME=nvimy /opt/homebrew/bin/nvim'
+alias xx='NVIM_APPNAME=nvimx /opt/homebrew/bin/nvim'
 
 # tmux
 alias tmux='tmux -f $HOME/.config/tmux/tmux.conf' # use custom config file ans start tmux

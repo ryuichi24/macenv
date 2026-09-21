@@ -38,17 +38,21 @@ alias ch="cat ~/.bashrc"
 alias appd="cd $HOME/Library/Application\ Support/"
 
 # quick edit
-alias ee='cd $HOME/Dev/personal/projects/macenv && vi .'
-alias nn='cd $HOME/Dev/personal/projects/macenv/files/.config/nvim && vi .'
-alias pp='cd $HOME/Dev/personal/projects && vi .'
-alias mm='cd $HOME/Dev/personal/projects/my-knowledge-base && vi .'
-alias dd='cd "$HOME/dev/personal/projects/my-knowledge-base" && file="./daily/$(date +%Y-%m-%d).md" && [ ! -f "$file" ] && touch "$file"; vi "$file"'
+DEV="$HOME/dev"
+PROJECTS="$DEV/personal/projects"
+MAC_ENV="$PROJECTS/macenv"
+
+alias ee='cd $MAC_ENV && vi .'
+alias nn='cd $MAC_ENV/files/.config/nvim && vi .'
+alias pp='cd $PROJECTS && vi .'
+alias mm='cd $PROJECTS/my-knowledge-base && vi .'
+alias dd='cd "$PROJECTS/my-knowledge-base" && file="./daily/$(date +%Y-%m-%d).md" && [ ! -f "$file" ] && touch "$file"; vi "$file"'
 
 # quick open
 alias des='cd $HOME/Desktop && y'
-alias dev='cd $HOME/dev && y'
-alias pro='cd $HOME/dev/personal/projects && y'
-alias tmp='cd $HOME/dev/personal/tmp && y'
+alias dev='cd $DEV && y'
+alias pro='cd $PROJECTS && y'
+alias tmp='cd $PROJECTS/tmp && y'
 
 
 # opencode

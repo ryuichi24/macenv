@@ -7,8 +7,8 @@ BREW_TAPS=(
     # "lyraphase/pcloud" # pCloud Drive support
     # https://github.com/Homebrew/homebrew-cask-fonts?utm_source=chatgpt.com
     # "homebrew/cask-fonts"
-    "FelixKratz/formulae"
-	"y3owk1n/tap"
+    # "FelixKratz/formulae"
+	# "y3owk1n/tap"
 )
 
 # =============================================
@@ -40,13 +40,13 @@ BREW_CLIS=(
     # "xtool-org/tap/xtool"  # XTool utilities
     # "koekeishiya/formulae/skhd"   # Hotkey daemon for macOS must to start by `skhd --start-service`
     # dev dependencies
-    "pkg-config" # manages compile and link flags for libraries
-    "zeromq" # ZeroMQ messaging library
+    # "pkg-config" # manages compile and link flags for libraries
+    # "zeromq" # ZeroMQ messaging library
     # "koekeishiya/formulae/yabai" # Tiling window manager for macOS
     "tmux"    # Terminal
     # "sst/tap/opencode" # AI Model CLI Client
     # "uv" # python manager
-	"y3owk1n/tap/neru"
+	# "y3owk1n/tap/neru"
 )
 
 # =============================================
@@ -68,21 +68,21 @@ CASK_APPS=(
     "discord"            # Communication platform
     # "whatsapp"           # Messaging app
     "bitwarden"          # Password manager
-    "readdle-spark"      # Email client
+    # "readdle-spark"      # Email client
     # "bruno"              # API client
     "orbstack"           # Container platform
     "karabiner-elements" # Keyboard customizer
     "microsoft-teams"    # Communication platform
     "betterdisplay"      # Display management
-    "handbrake"          # Video transcoder
+    # "handbrake"          # Video transcoder
     "kap"                # Screen recorder
     # "monitorcontrol"     # External display controller
     # "rectangle"          # Window manager
     "raycast"            # Productivity tool
     # "alt-tab"            # Window switcher
-    "cryptomator"        # Encryption tool
-    "obs"                # Streaming software
-    "audacity"           # Audio editor/recorder
+    # "cryptomator"        # Encryption tool
+    # "obs"                # Streaming software
+    # "audacity"           # Audio editor/recorder
     # "blackhole-2ch"      # Audio driver
     # "blackhole-16ch"     # Audio driver
     # "figma"              # Design tool
@@ -94,17 +94,17 @@ CASK_APPS=(
     "keka"                 # File archiver
     "maccy"                # Clipboard manager
     # "font-symbols-only-nerd-font"  # Nerd fonts
-    "qt-creator"           # Qt IDE
+    # "qt-creator"           # Qt IDE
     # font-meslo-lg-nerd-font # font
     "smoothcsv"          # CSV editor: https://smoothcsv.com/ja/
     "figma"                # Design tool
     # tools to manager manga for kindle
     # article: https://xtech.nikkei.com/atcl/nxt/column/18/01736/072800001/
     # usb manger: https://www.amazon.com/gp/help/customer/display.html?nodeId=TCUBEdEkbIhK07ysFu
-    "kindle-comic-converter" # Convert manga/comic to Kindle format file
-    "obsidian"               # Note-taking app
+    # "kindle-comic-converter" # Convert manga/comic to Kindle format file
+    # "obsidian"               # Note-taking app
     "shottr"                # Screenshot tool
-    "keycastr"              # Keystroke visualizer
+    # "keycastr"              # Keystroke visualizer
     "jordanbaird-ice"        # System Tray manger
 	# "db-browser-for-sqlite" # SQLite database browser
 )
@@ -113,7 +113,7 @@ CASK_APPS=(
 # Mac App Store Applications
 # =============================================
 MAS_APPS=(
-    "LINE:539883307"
+    # "LINE:539883307"
     # "Presentify:1507246666"
     # "Urban_VPN_Desktop:1517772049"
     # "Xcode:497799835"

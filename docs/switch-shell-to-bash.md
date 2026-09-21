@@ -13,7 +13,7 @@ echo $(brew --prefix)/bin/bash | sudo tee -a /etc/shells
 ```
 
 > [!NOTE]
-> `homebrew` creates a symlink to each installed CLI tools in `/opt/homebrew/bin`
+> `homebrew` creates a symlink to each installed CLI tool in `/opt/homebrew/bin`
 > `brew --prefix` returns the path to the folder of the symlinks
 
 ## Switch Default Shell to Bash

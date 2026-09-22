@@ -33,7 +33,17 @@ On the Mac you want to control, open:
 
 And Enable `Remote Login`
 
+Lastly, connect the client machine to the desk machine with a Thunderbolt cable.
+
 ## Find the IP Address of the Dest Machine
+
+If both are connected via the thunderbolt cable, MacOS will automatically assign an IP address both to the client and the destination machine.
+
+> [!NOTE]
+> You must keep the lid open otherwise, MacOS will shut down the Thunderbolt network.
+> _will do research on how to keep MacOS awake even when the lid is closed_
+
+You can find the IP address assigned by MacOS for the Thunderbolt connection of the current machine by running:
 
 ```bash
 ifconfig bridge0
@@ -42,6 +52,18 @@ ifconfig bridge0
 > [!NOTE]
 > `bridge0` is the network interface name macOS commonly assigns to Thunderbolt Bridge.
 > `ifconfig` means `interface configuration`, a Unix command to view and configure network interfaces.
+
+## Assign Static IP Address to the Dest Machine
+
+The default IP address assigned by MacOS is DHCP, which means it might change every time you restart the machine.
+
+That is why you should assign a static IP address to the destination machine.
+
+Under System Settings → Network → Thunderbolt Bridge → Details → TCP/IP → Configure IPv4: Manually.
+
+> [!NOTE]
+> You must make sure the Thunderbolt interface of the client machine is in the same IP subnet as the destination machine.
+> Otherwise, you will get an error when trying to connect to the destination machine since the desk machine cannot be found.
 
 ## SSH into Desk Machine with Password and Put Public Key
 

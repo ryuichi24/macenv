@@ -107,6 +107,7 @@ CASK_APPS=(
     # "keycastr"              # Keystroke visualizer
     "jordanbaird-ice"        # System Tray manger
 	# "db-browser-for-sqlite" # SQLite database browser
+	"tailscale-app"
 )
 
 # =============================================

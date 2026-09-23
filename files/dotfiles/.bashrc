@@ -18,13 +18,15 @@ alias nvim='NVIM_APPNAME=$NVIM_DIR nvim'
 alias xx='NVIM_APPNAME=nvimx /opt/homebrew/bin/nvim'
 
 # tmux
-alias tmux='tmux -f $HOME/.config/tmux/tmux.conf' # use custom config file ans start tmux
+TMUX_CONFIG="$HOME/.config/tmux/tmux.conf"
+alias tmux='tmux -f $TMUX_CONFIG'
 alias tmn='tmux new -s' # create a new session with a given name
 alias tmd='tmux detach' # detach from the current session
 alias tma='tmux attach -t' # attach to a session with a given name
 alias tmk='tmux kill-session -t' # kill all sessions
 alias tmks='tmux kill-server' # kill all sessions
 alias tml='tmux ls' # create a new session with a given name
+alias tmr='tmux source-file $TMUX_CONFIG' # reload config
 
 # pnpm
 alias pn='pnpm'

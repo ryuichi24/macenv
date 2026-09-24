@@ -334,6 +334,11 @@ run = ["layout tiling", "move-node-to-workspace G"]
 if.app-id = "com.microsoft.rdc.macos"
 run = ["layout tiling", "move-node-to-workspace R"]
 
+# System
+[[on-window-detected]]
+if.app-id = "com.carriez.rustdesk"
+run = ["layout tiling", "move-node-to-workspace S"]
+
 # AI chats
 [[on-window-detected]]
 if.app-id = "com.openai.codex"
@@ -343,6 +348,11 @@ run = ["layout tiling", "move-node-to-workspace C"]
 if.app-id = "com.anthropic.claudefordesktop"
 run = ["layout tiling", "move-node-to-workspace C"]
 
+# work
+# 
+[[on-window-detected]]
+if.app-id = "com.tinyspeck.slackmacgap"
+run = ["layout tiling", "move-node-to-workspace C"]
 
 # 
 [[on-window-detected]]

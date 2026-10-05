@@ -101,3 +101,71 @@ case ":$PATH:" in
   *) export PATH="$PNPM_HOME/bin:$PATH" ;;
 esac
 # pnpm end
+
+# util
+
+# Manage macOS system sleep settings.
+# Usage:
+#   sleep off     Disable automatic sleep
+#   sleep on      Enable automatic sleep after 10 minutes
+#   sleep status  Show the current sleep setting
+sleep() {
+  case "$1" in
+    off)
+      sudo pmset -a sleep 0
+      echo "Mac sleep disabled"
+      ;;
+    on)
+      sudo pmset -a sleep 10
+      echo "Mac sleep enabled (10 min)"
+      ;;
+    status)
+      pmset -g | grep -E '^[[:space:]]*sleep '
+      ;;
+    *)
+      echo "Usage: sleepmode {on|off|status}"
+      ;;
+  esac
+}
+
+
+
+# Manage macOS caffeinate mode.
+# Usage:
+#   caffeinemode on      Prevent idle/system/display/disk sleep
+#   caffeinemode off     Stop caffeinate and restore normal sleep behavior
+#   caffeinemode status  Show whether caffeinate is running
+caff() {
+  case "$1" in
+    on)
+      if pgrep -x caffeinate >/dev/null; then
+        echo "Caffeinate is already enabled"
+      else
+        caffeinate -dims >/dev/null 2>&1 &
+        disown
+        echo "Caffeinate enabled"
+      fi
+      ;;
+    off)
+      if pkill -x caffeinate; then
+        echo "Caffeinate disabled"
+      else
+        echo "Caffeinate is not running"
+      fi
+      ;;
+    status)
+      if pgrep -x caffeinate >/dev/null; then
+        echo "Caffeinate: ON"
+        pmset -g assertions | grep -A 10 "Assertion status system-wide"
+      else
+        echo "Caffeinate: OFF"
+      fi
+      ;;
+    *)
+      echo "Usage: caffeinemode {on|off|status}"
+      ;;
+  esac
+}
+
+# util end
+

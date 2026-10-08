@@ -51,5 +51,7 @@ export PATH="$PATH:$(go env GOPATH)/bin"
 export SDKMAN_DIR="$HOME/.sdkman"
 [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
 
+# playwright chrome extension
+PLAYWRIGHT_MCP_EXTENSION_TOKEN=
 # Aero.nvim
 export AERO_TAILSCALE_IP=

@@ -1,14 +1,20 @@
 {
   "$schema": "https://opencode.ai/config.json",
-  "model": "opencode/deepseek-v4-flash-free",
-  "default_agent": "planning",
   "mcp": {
     "playwright": {
       "type": "local",
-      "command": ["npx", "@playwright/mcp@latest", "--headless", "--extension"],
+      "command": [
+        "npx",
+        "@playwright/mcp@latest",
+        "--extension",
+        "--profile-dir-name",
+        "playwright"
+      ],
       "enabled": true
     }
   },
+  "model": "openai/gpt-6.1-sol",
+  "default_agent": "build",
   "agent": {
     "build": {
       "disable": false

@@ -104,10 +104,32 @@ esac
 
 # util
 
-# Search Google in the default browser: ggl how to brew coffee
+# Search Google: ggl how to brew coffee
 ggl() {
+  _web_query 'https://www.google.com/search?q=' ggl "$@"
+}
+
+# Search YouTube: yt how to brew coffee
+yt() {
+  _web_query 'https://www.youtube.com/results?search_query=' yt "$@"
+}
+
+# Open a ChatGPT prompt: gptn explain bash arrays
+gptn() {
+  _web_query 'https://chatgpt.com/?q=' gptn "$@"
+}
+
+# Open a temporary ChatGPT chat: gpt explain bash arrays
+gpt() {
+  _web_query 'https://chatgpt.com/?temporary-chat=true&q=' gpt "$@"
+}
+
+# URL-encode a query using Bash built-ins and open it in Brave's Personal profile.
+_web_query() {
+  local url="$1" name="$2"
+  shift 2
   if [ "$#" -eq 0 ] || [ -z "$*" ]; then
-    printf 'Usage: ggl <search query>\n' >&2
+    printf 'Usage: %s <query>\n' "$name" >&2
     return 1
   fi
 
@@ -124,7 +146,7 @@ ggl() {
         ;;
     esac
   done
-  open "https://www.google.com/search?q=$query"
+  open -na "Brave Browser" --args --profile-directory="Default" "$url$query"
 }
 
 # Manage macOS system sleep settings.

@@ -104,6 +104,29 @@ esac
 
 # util
 
+# Search Google in the default browser: ggl how to brew coffee
+ggl() {
+  if [ "$#" -eq 0 ] || [ -z "$*" ]; then
+    printf 'Usage: ggl <search query>\n' >&2
+    return 1
+  fi
+
+  local LC_ALL=C
+  local input="$*" query="" char encoded i
+  for ((i = 0; i < ${#input}; i++)); do
+    char="${input:i:1}"
+    case "$char" in
+      [a-zA-Z0-9.~_-]) query+="$char" ;;
+      ' ') query+='+' ;;
+      *)
+        printf -v encoded '%%%02X' "'$char"
+        query+="$encoded"
+        ;;
+    esac
+  done
+  open "https://www.google.com/search?q=$query"
+}
+
 # Manage macOS system sleep settings.
 # Usage:
 #   sleep off     Disable automatic sleep
@@ -168,4 +191,3 @@ caff() {
 }
 
 # util end
-

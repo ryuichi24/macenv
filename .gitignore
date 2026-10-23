@@ -1,2 +1,6 @@
 # Ignore tmux plugin directories - these are managed by tpm
 files/.config/tmux/plugins/*
+
+tmp
+
+.playwright-mcp

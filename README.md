@@ -7,6 +7,10 @@
    > [!NOTE]
    > You need to make sure the shell is listed in `/etc/shells`
    > since MacOS will allow you to change the shell only if it is listed in `/etc/shells`
+   >
+   > ```bash
+   > echo $(brew --prefix)/bin/bash | sudo tee -a /etc/shells
+   > ```
 2. Install HomeBrew
    a. Install XCode Command Line Tools
 3. Git Clone macenv repository

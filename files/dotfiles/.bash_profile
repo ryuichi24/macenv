@@ -55,3 +55,5 @@ export SDKMAN_DIR="$HOME/.sdkman"
 PLAYWRIGHT_MCP_EXTENSION_TOKEN=
 # Aero.nvim
 export AERO_TAILSCALE_IP=
+# mysql
+export PATH=/opt/homebrew/opt/mysql-client/bin:$PATH

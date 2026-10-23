@@ -34,6 +34,7 @@ BREW_CLIS=(
     "lazygit"
     "gh" # GitHub CLI
     "fzf" #
+	"imagemagick"   # Image manipulation tools
 
     # "diff-so-fancy" # Improved diff output
     # "imagemagick"   # Image manipulation tools
@@ -108,6 +109,7 @@ CASK_APPS=(
     "jordanbaird-ice"        # System Tray manger
 	# "db-browser-for-sqlite" # SQLite database browser
 	"tailscale-app"
+	"slack"
 )
 
 # =============================================

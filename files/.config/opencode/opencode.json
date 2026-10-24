@@ -11,6 +11,11 @@
         "playwright"
       ],
       "enabled": true
+    },
+    "officecli": {
+      "type": "local",
+      "command": ["officecli", "mcp"],
+      "enabled": true
     }
   },
   "model": "openai/gpt-6.1-sol",

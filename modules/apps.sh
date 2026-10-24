@@ -35,6 +35,7 @@ BREW_CLIS=(
     "gh" # GitHub CLI
     "fzf" #
 	"imagemagick"   # Image manipulation tools
+	"officecli" # Office CLI
 
     # "diff-so-fancy" # Improved diff output
     # "imagemagick"   # Image manipulation tools

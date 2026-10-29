@@ -57,3 +57,5 @@ PLAYWRIGHT_MCP_EXTENSION_TOKEN=
 export AERO_TAILSCALE_IP=
 # mysql
 export PATH=/opt/homebrew/opt/mysql-client/bin:$PATH
+# Go
+export PATH="$PATH:$(go env GOPATH)/bin"

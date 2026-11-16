@@ -111,6 +111,7 @@ CASK_APPS=(
 	# "db-browser-for-sqlite" # SQLite database browser
 	"tailscale-app"
 	"slack"
+	"freecad" # https://www.freecad.org/
 )
 
 # =============================================

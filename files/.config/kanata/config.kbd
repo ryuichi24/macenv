@@ -1,235 +1,35 @@
-(defsrc 
-    esc f1 f2 f3  f4 f5 f6 f7  f8 f9 f10 f11  f12
-    ` 1 2 3  4 5 6 7  8 9 0 -  = bspc
-    tab q w e  r t y u  i o p [  ] \
-    caps a s d  f g h j  k l ; '  ret 
-    lsft z x c  v b n m  , . / rsft 
-    fn lctl lalt lmet  spc rmet ralt left down up right
-)
-
-(defvar
-  ;; to repease the tap key
-  tap-time 200
-  ;; to trigger the hold action after this time
-  hold-time 200 
-  hold-time-slow 300 
-)
-
-
-(defalias
-
-    ;; Symbols
-    ! S-1
-    @ S-2
-    # S-3
-    $ S-4
-    % S-5
-    ^ S-6
-    & S-7
-    * S-8
-    ? S-/
-    + S-=
-    _ S--
-    | S-\
-    : S-;
-    ~ S-`
-    ;; brackets
-    lp S-9
-    rp S-0
-    { S-[
-    } S-]
-    < S-,
-    > S-.
-    dq S-'
-    ;;
-
-    ;; MacOS specific keys
-    mc C-up ;; Mission Control
-    sls M-spc ;; Spotlight Search
-    dtn S-C-A-M-f5 ;; Dictation
-    dnd S-C-A-M-f6 ;; Do Not Disturb
-
-    lclick mltp
-
-    ;; Layer while held
-    l_held_s_normal (layer-while-held s_normal)
-    l_held_num (layer-while-held num)
-    l_held_ctrl (layer-while-held ctrl)
-    l_held_bracket (layer-while-held bracket)
-    l_held_symbol (layer-while-held symbol)
-    l_held_nav (layer-while-held nav)
-
-    ;; Layer switch
-    l_switch_base (layer-switch base)
-    l_switch_normal (layer-switch normal)
-    l_switch_visual (layer-switch visual)
-    l_switch_num (layer-switch num)
-
-    ;; Layer Keys
-    lmet (tap-hold $tap-time $hold-time bspc @l_held_bracket)
-    rmet (tap-hold $tap-time $hold-time rmet rmet)
-    spc (tap-hold $tap-time $hold-time spc @l_held_symbol)
-    ret(tap-hold $tap-time $hold-time ret @l_held_num)
-
-    ;; Hold-tap keys
-    a(tap-hold $tap-time $hold-time 
-        a 
-        lctl
-    )
-
-    x(tap-hold $tap-time $hold-time 
-        x 
-        lalt
-    )
-
-    z(tap-hold $tap-time $hold-time
-        z
-        lalt
-    )
-
-    *lalt(tap-hold $tap-time $hold-time 
-        @* 
-        lalt
-    )
-
-    /(tap-hold $tap-time $hold-time 
-        / 
-        rsft
-    )
-
-    ;; Key combo
-    lsel S-left
-    rsel S-right
-    usel S-up
-    dsel S-down
-    llinemove M-left ;; Move to beginning of line
-    rlinemove M-right ;; Move to end of line
-    llinesel S-M-left ;; Select to beginning of line
-    rlinesel S-M-right ;; Select to end of line
-    copy M-c
-    cut M-x
-    paste M-v
-    undo M-z
-    rwordmove A-right
-    lwordmove A-left
-    fdel C-d
-
-    ;; Macro
-    gojumpdown (macro down down down down down down down down down down down down down down down down down down down down down down down down down down down)
-    gojumpup (macro up up up up up up up up up up up up up up up up up up up up up up up up up up up)
-
-    ;; Multi
-    vi_yank (multi (macro @copy 50 left) @l_switch_normal)
-    vi_cut (multi (macro @cut 50 left) @l_switch_normal)
-    vi_shiftv (multi (macro @llinemove @rlinesel) @l_switch_visual)
-    vi_newline (multi (macro @rlinemove 50 S-ret) @l_switch_base)
-    vi_appendinsert (multi (macro right) @l_switch_base)
-    vi_appendinsertatend (multi (macro @rlinemove) @l_switch_base)
-    vi_appendinsertatfirst (multi (macro @llinemove) @l_switch_base)
-
-
-    ;; Tap Dance
-    rsfttapdance (tap-dance 200 (
-        rsft 
-        @l_switch_normal
-    ))
-
-    e (tap-dance 200 (
-        e 
-        esc
-    ))
-
-)
-
-(deflayer base 
-    esc  🔅    🔆    @mc   @sls  @dtn  @dnd  ◀◀    ▶⏸    ▶▶    🔇    🔉    🔊
-    ` 1 2 3  4 5 6 7  8 9 0 -  = bspc
-    XX q w e  r t y u  i o p XX  XX XX
-    XX @a s d  f g h j  k l @ret XX XX
-    lsft @z x c  v b n m  , . @/ @rsfttapdance
-    XX XX lalt @lmet @spc @rmet ralt left  down up right
-)
-
-(deflayer normal
-    esc XX XX XX  XX XX XX XX  XX XX XX XX  XX
-    XX XX XX XX  XX XX XX XX  XX XX XX XX  XX XX
-    XX XX @rwordmove XX  XX XX XX @undo  @l_switch_base @vi_newline @paste XX  XX XX
-    @l_held_ctrl @vi_appendinsert XX XX  XX XX left down  up right ret XX XX
-    @l_held_s_normal @l_held_s_normal @fdel XX  @l_switch_visual @lwordmove XX XX  XX XX @l_held_s_normal XX
-    XX XX XX XX  XX ret XX XX  XX XX XX
-)
-
-
-(deflayer s_normal
-    esc XX XX XX  XX XX XX XX  XX XX XX XX  XX
-    XX XX XX XX  XX XX XX XX  XX XX XX XX  XX XX
-    XX XX XX XX  XX XX XX XX  @vi_appendinsertatfirst XX XX XX  XX XX
-    XX @vi_appendinsertatend XX XX XX XX XX XX XX XX XX XX  XX
-    XX XX XX XX  @vi_shiftv XX XX XX  XX XX XX XX 
-    XX XX XX XX  XX XX XX XX  XX XX XX
-)
-
-(deflayer ctrl
-    esc XX XX XX  XX XX XX XX  XX XX XX XX  XX
-    XX XX XX XX  XX XX XX XX  XX XX XX XX  XX bspc
-    XX XX XX XX  XX XX XX @gojumpup  XX XX XX XX  XX XX
-    XX XX XX @gojumpdown  XX XX XX XX  XX XX XX XX  XX 
-    XX XX XX XX  XX XX XX XX  XX XX XX XX 
-    XX XX XX XX  XX XX XX XX  XX XX XX
-)
-
-(deflayer visual
-    esc XX XX XX  XX XX XX XX  XX XX XX XX  XX
-    XX XX XX XX  XX XX XX XX  XX XX XX XX  XX XX
-    XX @l_switch_normal XX XX  XX XX @vi_yank XX  XX XX XX XX  XX XX
-    XX XX XX @vi_cut  XX XX @lsel @dsel @usel @rsel XX XX  XX
-    lsft XX XX XX  XX XX XX XX  XX XX XX XX 
-    XX lalt lmet lmet  XX XX XX XX  XX XX XX
-)
-
-(deflayer symbol
-    esc XX XX XX  XX XX XX XX  XX XX XX XX  XX
-    XX XX XX XX  XX XX XX XX  XX XX XX XX  XX XX
-    XX ' @dq ` - @+ 7 8 9 XX XX XX  XX XX
-    XX @@ @# @$  @~ \ 4 5 6 XX XX XX  XX
-    lsft @% @*lalt @^  @& @! XX 1 2 3 XX XX
-    XX lalt lmet lmet  XX 0 XX XX  XX XX XX
-)
-
-;; Brackets layer
-(deflayer bracket
-    XX XX XX XX  XX XX XX XX  XX XX XX XX  XX
-    ` M-1 M-2 M-3  M-4 M-5 M-6 M-7  M-8 M-9 M-0 -  = bspc
-    XX tab M-w esc  M-r M-t = @lp @rp - + XX  XX XX
-    XX M-a M-s M-d  M-f Lang1 @: @{  @} @| XX XX  XX
-    XX M-z M-x M-c  M-v Lang2 ; [ ] @< @> XX
-    XX XX XX XX  M-spc XX @_ XX XX XX XX
-)
-
-(deflayer nav
-    esc XX XX XX  XX XX XX XX  XX XX XX XX  XX
-    XX XX XX XX  XX XX XX XX  XX XX XX XX  XX bspc
-    XX XX XX XX  XX XX XX XX  XX XX XX XX  XX XX
-    XX XX XX XX  XX XX left down up right XX XX  XX 
-    XX XX XX XX  XX XX XX XX  XX XX XX XX 
-    XX XX XX XX  XX XX XX XX  XX XX XX
-)
-
-(deflayer num
-    esc XX XX XX  XX XX XX XX  XX XX XX XX  XX
-    XX XX XX XX  XX XX XX XX  XX XX XX XX  XX bspc
-    XX 7 8 9  XX XX XX XX  XX XX XX XX  XX XX
-    XX 4 5 6  XX XX XX XX  XX XX XX XX  XX 
-    XX 1 2 3  XX XX XX XX  XX XX XX XX 
-    XX XX 0 lmet  XX XX XX XX  XX XX XX
-)
+;; Keyboard: MacBook Air / Pro · US
+;; main
+;; Built with Kanata Studio
 
 (defcfg
-    process-unmapped-keys yes
-    log-layer-changes yes
-
-    ;; macos-dev-names-exclude ()
-
-    ;; macos-dev-names-include ()
+  process-unmapped-keys yes
+  macos-dev-names-include ("Apple Internal Keyboard / Trackpad")
 )
 
+(defsrc
+  esc f1 f2 f3 f4 f5 f6 f7 f8 f9 f10 f11 f12
+  grv 1 2 3 4 5 6 7 8 9 0 - = bspc
+  tab q w e r t y u i o p [ ] bksl
+  caps a s d f g h j k l ; ' ret
+  lsft z x c v b n m , . / rsft
+  fn lctl lalt lmet spc rmet ralt left up down rght
+)
+
+(deflayer base
+  esc f1 f2 f3 f4 f5 f6 f7 f8 f9 f10 f11 f12
+  grv 1 2 3 4 5 6 7 8 9 0 - = bspc
+  tab q w e r t y u i o p [ ] bksl
+  (tap-hold 200 200 esc lctl) (tap-hold 200 200 a lctl) s d f g h j k l (tap-hold 200 200 ret lctl) ' ret
+  lsft z x c v b n m , . / rsft
+  fn lctl lalt (tap-hold 200 200 bspc lmet) spc rmet ralt left up down rght
+)
+
+(deflayer bra
+  _ _ _ _ _ _ _ _ _ _ _ _ _
+  _ _ _ _ _ _ _ _ _ _ _ _ _ _
+  _ _ _ _ _ _ _ _ _ _ _ _ _ _
+  _ _ _ _ _ _ _ _ _ _ _ _ _
+  _ _ _ _ _ _ _ _ _ _ _ _
+  _ _ _ _ _ _ _ _ _ _ _
+)

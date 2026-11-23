@@ -109,6 +109,16 @@ ggl() {
   _web_query 'https://www.google.com/search?q=' ggl "$@"
 }
 
+# Search Amazon Japan: amz coffee beans
+amz() {
+  _web_query 'https://www.amazon.co.jp/s?k=' amz "$@"
+}
+
+# Search Rakuten: rak coffee beans
+rak() {
+  _web_query 'https://search.rakuten.co.jp/search/mall/' rak "$@"
+}
+
 # Search YouTube: yt how to brew coffee
 yt() {
   _web_query 'https://www.youtube.com/results?search_query=' yt "$@"

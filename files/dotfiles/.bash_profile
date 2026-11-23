@@ -52,10 +52,13 @@ export SDKMAN_DIR="$HOME/.sdkman"
 [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
 
 # playwright chrome extension
-PLAYWRIGHT_MCP_EXTENSION_TOKEN=
+PLAYWRIGHT_MCP_EXTENSION_TOKEN="xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+
 # Aero.nvim
-export AERO_TAILSCALE_IP=
+export AERO_TAILSCALE_IP="127.0.0.1"
+
 # mysql
 export PATH=/opt/homebrew/opt/mysql-client/bin:$PATH
+
 # Go
 export PATH="$PATH:$(go env GOPATH)/bin"

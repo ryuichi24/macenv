@@ -1,4 +1,5 @@
 {
+    "terminal.integrated.enableImages": true,
     // ------------------------------------ neovim ------------------------------------
     "vscode-neovim.neovimInitVimPaths.darwin": "/Users/ryu/.config/nvim/init.lua",
     "vscode-neovim.compositeKeys": {

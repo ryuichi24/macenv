@@ -11,10 +11,11 @@
       "command": [
         "npx",
         "@playwright/mcp@latest",
-        "--extension",
-        "--profile-dir-name",
-        "playwright"
+        "--extension"
       ],
+      "environment": {
+        "PLAYWRIGHT_MCP_EXECUTABLE_PATH": "/Applications/Brave Browser.app/Contents/MacOS/Brave Browser"
+      },
       "enabled": true
     },
     "officecli": {

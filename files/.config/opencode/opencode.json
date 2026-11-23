@@ -1,5 +1,10 @@
 {
   "$schema": "https://opencode.ai/config.json",
+  "permission": {
+    "skill": {
+      "vhs": "deny"
+    }
+  },
   "mcp": {
     "playwright": {
       "type": "local",

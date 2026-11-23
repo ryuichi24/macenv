@@ -21,7 +21,7 @@ BREW_CLIS=(
     # "rbenv"   # Ruby Environment
     "pnpm"    # Fast, disk space efficient package manager
     "go"      # Go programming language
-    "gcc"     # GNU Compiler Collection
+    # "gcc"     # GNU Compiler Collection
     "cmake"   # Build system
     "ffmpeg"  # Multimedia framework
     "neovim"  # Text editor
@@ -34,9 +34,8 @@ BREW_CLIS=(
     "lazygit"
     "gh" # GitHub CLI
     "fzf" #
-	"imagemagick"   # Image manipulation tools
+	# "imagemagick"   # Image manipulation tools
 	"officecli" # Office CLI
-
     # "diff-so-fancy" # Improved diff output
     # "imagemagick"   # Image manipulation tools
     # "xtool-org/tap/xtool"  # XTool utilities
@@ -49,6 +48,8 @@ BREW_CLIS=(
     # "sst/tap/opencode" # AI Model CLI Client
     # "uv" # python manager
 	# "y3owk1n/tap/neru"
+	# --- database release ---
+	"mysql"
 )
 
 # =============================================
@@ -74,7 +75,7 @@ CASK_APPS=(
     # "bruno"              # API client
     "orbstack"           # Container platform
     "karabiner-elements" # Keyboard customizer
-    "microsoft-teams"    # Communication platform
+    # "microsoft-teams"    # Communication platform
     "betterdisplay"      # Display management
     # "handbrake"          # Video transcoder
     "kap"                # Screen recorder
@@ -94,12 +95,12 @@ CASK_APPS=(
     # "vmware-fusion"        # Virtualization
     # "rustdesk"             # Remote desktop
     "keka"                 # File archiver
-    "maccy"                # Clipboard manager
+    # "maccy"                # Clipboard manager
     # "font-symbols-only-nerd-font"  # Nerd fonts
     # "qt-creator"           # Qt IDE
     # font-meslo-lg-nerd-font # font
     "smoothcsv"          # CSV editor: https://smoothcsv.com/ja/
-    "figma"                # Design tool
+    # "figma"                # Design tool
     # tools to manager manga for kindle
     # article: https://xtech.nikkei.com/atcl/nxt/column/18/01736/072800001/
     # usb manger: https://www.amazon.com/gp/help/customer/display.html?nodeId=TCUBEdEkbIhK07ysFu
@@ -111,7 +112,7 @@ CASK_APPS=(
 	# "db-browser-for-sqlite" # SQLite database browser
 	"tailscale-app"
 	"slack"
-	"freecad" # https://www.freecad.org/
+	# "freecad" # https://www.freecad.org/
 )
 
 # =============================================
